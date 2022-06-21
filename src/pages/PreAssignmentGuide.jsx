@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const PreAssignmentGuide = () => {
+export default function PreAssignmentGuide() {
   return (
     <Container>
       <Section>
@@ -55,9 +55,7 @@ const PreAssignmentGuide = () => {
       </Section>
     </Container>
   );
-};
-
-export default PreAssignmentGuide;
+}
 
 const Container = styled.div`
   min-height: 100vh;
