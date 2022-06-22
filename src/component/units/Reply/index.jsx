@@ -33,7 +33,7 @@ const CommentWrapper = styled.div`
 const Comment = styled.div`
   font-size: 10px;
 `;
-export default function Reply() {
+export default function Reply(props) {
   const [reply, setReply] = useState([]);
   const SubmitRef = useRef(null);
   const SubmitComment = (event) => {
