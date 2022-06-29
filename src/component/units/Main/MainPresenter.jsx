@@ -5,6 +5,7 @@ import Reply from '../Reply';
 export default function MainPageUI(props) {
   return (
     <>
+      {!props.loading && <S.Loading>Image Loading...</S.Loading>}
       {props.board.map((el) => (
         <S.Wrapper key={el.id}>
           <S.HeadWrapper>
@@ -12,7 +13,6 @@ export default function MainPageUI(props) {
             <S.Head>{el.writer}</S.Head>
           </S.HeadWrapper>
           <S.MainImg src={el.image} onLoad={() => props.setLoading?.(true)} />
-          {!props.loading && <S.Loading>Loading...</S.Loading>}
           <S.ButtonWrapper>
             <S.LikeImg src="/Header/heart.png" />
             <S.CommentImg src="/comment.png" />

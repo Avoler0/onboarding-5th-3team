@@ -22,7 +22,7 @@ function App() {
   return (
     <Routes>
       <Route
-        path="/"
+        path="/main"
         element={
           <>
             <Layout />
@@ -33,7 +33,7 @@ function App() {
         }
       />
       <Route
-        path="/Login"
+        path="/"
         element={
           <Wrapper>
             <Login />

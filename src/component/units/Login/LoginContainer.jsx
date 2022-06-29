@@ -34,7 +34,7 @@ export default function LoginPage() {
     }
     if (test === true && isActive === true) {
       localStorage.setItem('LoginUser', emailRef.current?.value);
-      navigate('/');
+      navigate('/main');
     }
   };
 
