@@ -1,5 +1,11 @@
 # :: 원티드 프리온보딩 프론트엔드 코스 사전과제
 
+JSON Data를 활용하기 위해서 
+
+npx json-server ./data.json --port 4000
+
+해주셔야 합니다.
+
 ## Quick Overview
 
 ```
