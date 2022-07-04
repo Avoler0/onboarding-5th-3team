@@ -12,7 +12,7 @@ export default function LoginPage() {
 
   const onChangeEmail = (e) => {
     const EmailRex = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-    if (EmailRex.test(e.target.value) === false) {
+    if (!EmailRex.test(e.target.value)) {
       setIsActive(false);
     } else {
       setIsActive(true);
@@ -21,7 +21,7 @@ export default function LoginPage() {
   const onChangePassword = (e) => {
     const PasswordRex =
       /(?=.*\d{1,50})(?=.*[~`!@#$%^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,16}$/;
-    if (PasswordRex.test(e.target.value) === false) {
+    if (!PasswordRex.test(e.target.value)) {
       setTest(false);
     } else {
       setTest(true);
@@ -32,7 +32,7 @@ export default function LoginPage() {
     if (!test || !isActive) {
       return alert('이메일과 비밀번호를 정확하게 입력해주세요');
     }
-    if (test === true && isActive === true) {
+    if (test && isActive) {
       localStorage.setItem('LoginUser', emailRef.current?.value);
       navigate('/main');
     }

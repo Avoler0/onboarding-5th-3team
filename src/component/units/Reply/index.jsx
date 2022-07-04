@@ -33,13 +33,13 @@ const CommentWrapper = styled.div`
 const Comment = styled.div`
   font-size: 10px;
 `;
-export default function Reply(props) {
+export default function Reply() {
   const [reply, setReply] = useState([]);
   const SubmitRef = useRef(null);
-  const SubmitComment = (event) => {
-    if (event.keyCode === 13 && event.target.value !== ' ') {
-      setReply([...reply, event.target.value]);
-      event.target.value = '';
+  const SubmitComment = (e) => {
+    if (e.keyCode === 13 && e.target.value !== ' ') {
+      setReply([...reply, e.target.value]);
+      e.target.value = '';
     }
   };
   const onClickSubmit = () => {

@@ -1,12 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import MainPageUI from './MainPresenter';
 import { useNavigate } from 'react-router-dom';
+import MainPageUI from './MainPresenter';
 
 export default function MainPage() {
   const [board, setBoard] = useState([]);
   const [loading, setLoading] = useState(false);
+  let navigate = useNavigate();
 
   const getPost = () => {
     axios
@@ -21,7 +22,7 @@ export default function MainPage() {
 
   useEffect(() => {
     if (localStorage.getItem('LoginUser') === null) {
-      return useNavigate('/');
+      return navigate('/');
     }
     getPost();
   }, []);
