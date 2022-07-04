@@ -1,42 +1,32 @@
 {
   "posts": [
     {
-      "like": 1,
-      "image": "/photo1.jpeg",
-      "writer": "최창서",
+      "like": 18,
       "title": "제목입니다",
-      "reply": [
-        "dwq",
-        "dwq",
-        "dwqdqw",
-        "dwqdqw",
-        "dwqdqw",
-        "dwqdqwdwq",
-        "dwqdqwdwqdwqdw",
-        "dwqdqwdwqdwqdwdwq"
-      ],
+      "writer": "영희",
+      "image": "https://source.unsplash.com/random/600x500",
+      "reply": [],
       "id": 1
     },
     {
-      "like": 5,
-      "image": "/photo2.jpeg",
-      "writer": "짱구",
+      "id": 2,
       "title": "제목입니다",
+      "writer": "영희",
+      "image": "https://source.unsplash.com/random/900x500",
+      "like": 10,
       "reply": [
-        "안녕하세요",
-        "댓글입니다",
-        "댓글입니다",
-        "신기하네요"
-      ],
-      "id": 2
+        "dsads"
+      ]
     },
     {
       "id": 3,
       "title": "제목입니다",
       "writer": "영희",
-      "image": "/photo3.jpeg",
+      "image": "https://source.unsplash.com/random/700x1080",
       "like": 10,
-      "reply": []
+      "reply": [
+        "Dsada"
+      ]
     }
   ]
 }

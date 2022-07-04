@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
   margin-bottom: 10px;
   border: 1px solid lightgray;
   box-shadow: 1px 1px 1px -1px lightgray;
+  display: ${(props) => (props.load ? 'flex' : 'none')};
+  flex-direction: column;
 `;
 export const HeadWrapper = styled.div`
   display: flex;

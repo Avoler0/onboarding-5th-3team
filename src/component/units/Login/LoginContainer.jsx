@@ -2,7 +2,10 @@ import { useRef, useState } from 'react';
 import LoginUI from './LoginPresenter';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { email, password } from '../../commons/utils/loginValidation.js';
+import {
+  checkEmail,
+  checkPassword,
+} from '../../commons/utils/loginValidation.js';
 
 export default function LoginPage() {
   const emailRef = useRef(null);
@@ -13,12 +16,12 @@ export default function LoginPage() {
 
   const onChangeEmail = (e) => {
     const emailInput = e.target.value;
-    email(emailInput) ? setEmailValid(true) : setEmailValid(false);
+    setEmailValid(checkEmail(emailInput));
   };
 
   const onChangePassword = (e) => {
     const passwordInput = e.target.value;
-    password(passwordInput) ? setPasswordValid(true) : setPasswordValid(false);
+    setPasswordValid(checkPassword(passwordInput));
   };
 
   const LoginButton = () => {
