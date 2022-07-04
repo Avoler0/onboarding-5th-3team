@@ -7,23 +7,23 @@ export default function LoginUI(props) {
       <S.Contents>
         <S.MainImg src={'/Login/instargram.png'} />
         <S.EmailInput
-          test={props.test}
-          isActive={props.isActive}
+          passwordValid={props.passwordValid}
+          emailValid={props.emailValid}
           onChange={props.onChangeEmail}
           ref={props.emailRef}
           placeholder="전화번호, 사용자 이름 또는 이메일"
         ></S.EmailInput>
         <S.PasswordInput
-          test={props.test}
-          isActive={props.isActive}
+          passwordValid={props.passwordValid}
+          emailValid={props.emailValid}
           onChange={props.onChangePassword}
           ref={props.passwordRef}
           type="password"
           placeholder="비밀번호"
         ></S.PasswordInput>
         <S.Button
-          test={props.test}
-          isActive={props.isActive}
+          passwordValid={props.passwordValid}
+          emailValid={props.emailValid}
           onClick={props.LoginButton}
         >
           로그인

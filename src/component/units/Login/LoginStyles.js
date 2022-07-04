@@ -31,7 +31,7 @@ export const Label = styled.div`
 export const EmailInput = styled.input`
   border-radius: 5px;
   border: ${(props) =>
-    props.isActive ? '1px solid #eeeeee' : '1px solid #f77167'};
+    props.emailValid ? '1px solid #eeeeee' : '1px solid #f77167'};
   width: 400px;
   height: 50px;
   padding-left: 5px;
@@ -42,7 +42,7 @@ export const EmailInput = styled.input`
 export const PasswordInput = styled.input`
   border-radius: 5px;
   border: ${(props) =>
-    props.test ? '1px solid #eeeeee' : '1px solid #f77167'};
+    props.passwordValid ? '1px solid #eeeeee' : '1px solid #f77167'};
   width: 400px;
   height: 50px;
   padding-left: 5px;
@@ -55,7 +55,7 @@ export const Button = styled.button`
   height: 40px;
   margin-bottom: 40px;
   background-color: ${(props) =>
-    props.test && props.isActive ? '#2c88dd' : '#9fc5e8'};
+    props.passwordValid && props.emailValid ? '#2c88dd' : '#9fc5e8'};
   border-radius: 5px;
   font-size: 17px;
   color: white;

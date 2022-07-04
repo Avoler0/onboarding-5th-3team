@@ -2,37 +2,30 @@ import { useRef, useState } from 'react';
 import LoginUI from './LoginPresenter';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { email, password } from '../../commons/utils/loginValidation.js';
 
 export default function LoginPage() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const [isActive, setIsActive] = useState(false);
-  const [test, setTest] = useState(false);
+  const [emailValid, setEmailValid] = useState(false);
+  const [passwordValid, setPasswordValid] = useState(false);
   let navigate = useNavigate();
 
   const onChangeEmail = (e) => {
-    const EmailRex = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-    if (!EmailRex.test(e.target.value)) {
-      setIsActive(false);
-    } else {
-      setIsActive(true);
-    }
+    const emailInput = e.target.value;
+    email(emailInput) ? setEmailValid(true) : setEmailValid(false);
   };
+
   const onChangePassword = (e) => {
-    const PasswordRex =
-      /(?=.*\d{1,50})(?=.*[~`!@#$%^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,16}$/;
-    if (!PasswordRex.test(e.target.value)) {
-      setTest(false);
-    } else {
-      setTest(true);
-    }
+    const passwordInput = e.target.value;
+    password(passwordInput) ? setPasswordValid(true) : setPasswordValid(false);
   };
 
   const LoginButton = () => {
-    if (!test || !isActive) {
+    if (!passwordValid || !emailValid) {
       return alert('이메일과 비밀번호를 정확하게 입력해주세요');
     }
-    if (test && isActive) {
+    if (passwordValid && emailValid) {
       localStorage.setItem('LoginUser', emailRef.current?.value);
       navigate('/main');
     }
@@ -45,8 +38,8 @@ export default function LoginPage() {
       LoginButton={LoginButton}
       emailRef={emailRef}
       passwordRef={passwordRef}
-      test={test}
-      isActive={isActive}
+      passwordValid={passwordValid}
+      emailValid={emailValid}
     />
   );
 }

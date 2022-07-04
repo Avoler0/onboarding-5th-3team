@@ -7,7 +7,7 @@ export default function Header() {
   let navigate = useNavigate();
   const Logout = () => {
     localStorage.removeItem('LoginUser');
-    navigate('/Login');
+    navigate('/');
   };
 
   return <HeaderUI Logout={Logout} />;

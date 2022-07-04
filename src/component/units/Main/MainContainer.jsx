@@ -21,10 +21,7 @@ export default function MainPage() {
   };
 
   useEffect(() => {
-    if (localStorage.getItem('LoginUser') === null) {
-      return navigate('/');
-    }
-    getPost();
+    localStorage.getItem('LoginUser') === null ? navigate('/') : getPost();
   }, []);
 
   return <MainPageUI board={board} loading={loading} setLoading={setLoading} />;
