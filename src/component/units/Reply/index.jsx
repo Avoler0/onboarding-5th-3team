@@ -36,16 +36,13 @@ const Comment = styled.div`
 export default function Reply() {
   const [reply, setReply] = useState([]);
   const SubmitRef = useRef(null);
-  const SubmitComment = (e) => {
-    if (e.keyCode === 13 && e.target.value !== ' ') {
-      setReply([...reply, e.target.value]);
-      e.target.value = '';
-    }
-  };
-  const onClickSubmit = () => {
+
+  const onClickSubmit = (e) => {
+    e.preventDefault();
     setReply([...reply, SubmitRef.current?.value]);
     SubmitRef.current.value = '';
   };
+
   return (
     <>
       <CommentWrapper>
@@ -53,16 +50,17 @@ export default function Reply() {
           <Comment key={index}>{el}</Comment>
         ))}
       </CommentWrapper>
-      <ReplyWrapper>
-        <ReplyImg src="/smile.png" />
-        <ReplyInput
-          ref={SubmitRef}
-          onKeyUp={SubmitComment}
-          type="text"
-          placeholder="댓글을 입력해주세요."
-        />
-        <Submit onClick={onClickSubmit}>게시</Submit>
-      </ReplyWrapper>
+      <form onSubmit={onClickSubmit}>
+        <ReplyWrapper>
+          <ReplyImg src="/smile.png" />
+          <ReplyInput
+            ref={SubmitRef}
+            type="text"
+            placeholder="댓글을 입력해주세요."
+          />
+          <Submit>게시</Submit>
+        </ReplyWrapper>
+      </form>
     </>
   );
 }
