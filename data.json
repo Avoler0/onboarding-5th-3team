@@ -1,20 +1,33 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "제목입니다",
-      "writer": "최창서",
-      "image": "/photo1.jpeg",
       "like": 1,
-      "reply": []
+      "image": "/photo1.jpeg",
+      "writer": "최창서",
+      "title": "제목입니다",
+      "reply": [
+        "dwq",
+        "dwq",
+        "dwqdqw",
+        "dwqdqw",
+        "dwqdqw",
+        "dwqdqwdwq",
+        "dwqdqwdwqdwqdw",
+        "dwqdqwdwqdwqdwdwq"
+      ],
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "제목입니다",
-      "writer": "짱구",
-      "image": "/photo2.jpeg",
       "like": 5,
-      "reply": []
+      "image": "/photo2.jpeg",
+      "writer": "짱구",
+      "title": "제목입니다",
+      "reply": [
+        "안녕하세요",
+        "댓글입니다",
+        "댓글입니다"
+      ],
+      "id": 2
     },
     {
       "id": 3,

@@ -19,7 +19,7 @@ export default function MainPageUI(props) {
             <S.MsgImg src="/Header/send.png" />
           </S.ButtonWrapper>
           <S.Like>좋아요 {el.like}</S.Like>
-          <Reply />
+          <Reply el={el} />
         </S.Wrapper>
       ))}
     </>
