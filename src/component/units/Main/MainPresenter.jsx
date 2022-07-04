@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './MainStyles';
-import Reply from '../Reply';
+import Reply from '../Reply/ReplyContainer';
 
 export default function MainPageUI(props) {
   return (

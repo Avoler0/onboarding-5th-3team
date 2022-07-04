@@ -7,7 +7,6 @@ export default function LoginUI(props) {
       <S.Contents>
         <S.MainImg src={'/Login/instargram.png'} />
         <S.EmailInput
-          passwordValid={props.passwordValid}
           emailValid={props.emailValid}
           onChange={props.onChangeEmail}
           ref={props.emailRef}
@@ -15,7 +14,6 @@ export default function LoginUI(props) {
         ></S.EmailInput>
         <S.PasswordInput
           passwordValid={props.passwordValid}
-          emailValid={props.emailValid}
           onChange={props.onChangePassword}
           ref={props.passwordRef}
           type="password"
