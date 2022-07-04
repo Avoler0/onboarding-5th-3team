@@ -9,7 +9,7 @@ export default function ReplyUI(props) {
           <S.Comment key={index}>{el}</S.Comment>
         ))}
       </S.CommentWrapper>
-      <form onSubmit={props.onClickSubmit}>
+      <form onSubmit={props.onSubmitReply}>
         <S.ReplyWrapper>
           <S.ReplyImg src="/smile.png" />
           <S.ReplyInput

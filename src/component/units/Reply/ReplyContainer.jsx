@@ -6,7 +6,7 @@ export default function ReplyPage(props) {
   const [reply, setReply] = useState([]);
   const SubmitRef = useRef(null);
 
-  const onClickSubmit = async (e) => {
+  const onSubmitReply = async (e) => {
     e.preventDefault();
     setReply([...reply, SubmitRef.current?.value]);
     await axios.put(`http://localhost:4000/posts/${props.el.id}`, {
@@ -20,14 +20,19 @@ export default function ReplyPage(props) {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/posts/${props.el.id}`).then((res) => {
-      setReply(res.data.reply);
-    });
+    axios
+      .get(`http://localhost:4000/posts/${props.el.id}`)
+      .then((res) => {
+        setReply(res.data.reply);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   }, []);
 
   return (
     <ReplyUI
-      onClickSubmit={onClickSubmit}
+      onSubmitReply={onSubmitReply}
       reply={reply}
       SubmitRef={SubmitRef}
     />
