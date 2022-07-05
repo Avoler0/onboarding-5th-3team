@@ -1,34 +1,44 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
+import FeedDataService from '../../../services/DataService';
 import ReplyUI from './ReplyPresenter';
-import axios from 'axios';
+
 export default function ReplyPage(props) {
-  const [reply, setReply] = useState([]);
+  const [reply, setReply] = useState(props.el.reply);
   const SubmitRef = useRef(null);
 
   const onSubmitReply = async (e) => {
     e.preventDefault();
     setReply([...reply, SubmitRef.current?.value]);
-    await axios.put(`http://localhost:4000/posts/${props.el.id}`, {
-      like: props.el.like,
-      image: props.el.image,
-      writer: props.el.writer,
-      title: props.el.title,
-      reply: [...reply, SubmitRef.current?.value],
+    await postReply({
+      ...props.el,
+      reply: [
+        ...props.el.reply,
+        {
+          user: `${localStorage.getItem('LoginUser')}`,
+          text: SubmitRef.current?.value,
+        },
+      ],
     });
     SubmitRef.current.value = '';
+    getReply();
   };
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:4000/posts/${props.el.id}`)
+  const postReply = async (data) => {
+    await FeedDataService.updateFeed(data);
+  };
+
+  const getReply = () => {
+    FeedDataService.getFeed(props.el.id)
       .then((res) => {
         setReply(res.data.reply);
       })
       .catch((error) => {
         alert(error.message);
       });
-  }, []);
+  };
+
+  useEffect(getReply, []);
 
   return (
     <ReplyUI

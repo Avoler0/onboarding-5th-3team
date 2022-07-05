@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './MainStyles';
 import Reply from '../Reply/ReplyContainer';
-import axios from 'axios';
+import FeedDataService from '../../../services/DataService';
 
 export default function MainPageUI(props) {
   return (
@@ -17,17 +17,12 @@ export default function MainPageUI(props) {
             <S.LikeImg
               id={el.id}
               onClick={async () => {
-                await axios
-                  .put(`http://localhost:4000/posts/${el.id}`, {
-                    like: el.like + 1,
-                    title: el.title,
-                    writer: el.writer,
-                    image: el.image,
-                    reply: el.reply,
-                  })
-                  .then((res) => {
-                    props.setLike((prev) => !prev);
-                  });
+                await FeedDataService.updateFeed({
+                  ...el,
+                  like: el.like + 1,
+                }).then((res) => {
+                  props.setLike((prev) => !prev);
+                });
               }}
               src="/Header/heart.png"
             />
