@@ -43,8 +43,8 @@ export default function LoginUI(props) {
 
       <S.AppDownFont>앱을 다운로드하세요.</S.AppDownFont>
       <S.AppDownWrapper>
-        <S.StoreIcon src={'/Login/appStore.png'} />
-        <S.StoreIcon src={'/Login/playStore.png'} />
+        <S.AppStore src={'/Login/appStore.png'} />
+        <S.GooglePlay src={'/Login/playStore.png'} />
       </S.AppDownWrapper>
     </S.LoginWrapper>
   );
