@@ -31,3 +31,8 @@ export const CommentWrapper = styled.div`
 export const Comment = styled.div`
   font-size: 10px;
 `;
+export const Overlay = styled.div`
+  background-color: rgb(255, 255, 255, 1);
+  width: 100vw;
+  height: 100vh;
+`;
