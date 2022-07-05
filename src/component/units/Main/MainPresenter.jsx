@@ -35,10 +35,9 @@ export default function MainPageUI(props) {
           </S.ButtonWrapper>
           <S.Like>좋아요 {el.like}</S.Like>
           <div onClick={() => setShowReplyOverlay((prev) => !prev)}>
-              댓글 모두 보기 : {el.id}
-            </div>
-            <Reply el={el} />
-          </S.Wrapper>
+            댓글 모두 보기 : {el.id}
+          </div>
+          <Reply el={el} />
           <div>
             {showReplyOverlay && (
               <ReplyOverlay
@@ -46,8 +45,8 @@ export default function MainPageUI(props) {
                 show={showReplyOverlay}
                 setShow={setShowReplyOverlay}
               />
-           </div>
-          <Reply el={el} />
+            )}
+          </div>
         </S.Wrapper>
       ))}
     </>
