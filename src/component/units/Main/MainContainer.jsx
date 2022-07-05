@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import MainPageUI from './MainPresenter';
 import axios from 'axios';
 import FeedDataService from '../../../services/DataService';
+import { getLoginUser } from '../../commons/utils/lib';
 
 export default function MainPage() {
   const [board, setBoard] = useState([]);
@@ -22,7 +23,7 @@ export default function MainPage() {
   };
 
   useEffect(() => {
-    localStorage.getItem('LoginUser') === null ? navigate('/') : getPost();
+    getLoginUser() === null ? navigate('/') : getPost();
   }, [like]);
 
   return (

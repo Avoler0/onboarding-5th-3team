@@ -32,9 +32,10 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
 `;
-export const LikeImg = styled.img`
+export const LikeImg = styled.div`
   width: 5%;
   margin-right: 10px;
+  color: ${(props) => (props.enabled ? 'red' : '')};
 `;
 export const CommentImg = styled.img`
   width: 5%;

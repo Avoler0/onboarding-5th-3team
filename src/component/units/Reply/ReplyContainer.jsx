@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import FeedDataService from '../../../services/DataService';
+import { getLoginUser } from '../../commons/utils/lib';
 import ReplyUI from './ReplyPresenter';
 
 export default function ReplyPage(props) {
@@ -15,7 +16,7 @@ export default function ReplyPage(props) {
       reply: [
         ...props.el.reply,
         {
-          user: `${localStorage.getItem('LoginUser')}`,
+          user: `${getLoginUser()}`,
           text: SubmitRef.current?.value,
         },
       ],

@@ -2,7 +2,6 @@ import React from 'react';
 import * as S from './ReplyStyles';
 
 export default function ReplyUI(props) {
-  console.log(props);
   return (
     <>
       <S.CommentWrapper>

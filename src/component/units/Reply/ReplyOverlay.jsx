@@ -4,10 +4,9 @@ import axios from 'axios';
 import * as S from './ReplyStyles';
 
 export default function Overlay({ data, show, setShow }) {
-  console.log(data);
   const { id, image, like, title, writer } = data;
   const [reply, setReply] = useState([]);
-  console.log('아이디', id, '리플', reply);
+
   useEffect(() => {
     axios
       .get(`http://localhost:4000/posts/${id}`)
