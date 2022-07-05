@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import { breakPoints } from '../../media';
 
 export const Container = styled.div`
+  position: sticky;
+  top: 0;
+  background-color: white;
   width: 100%;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
@@ -60,6 +63,8 @@ export const Input = styled.input`
 export const NavIcon = styled.div`
   display: flex;
   align-items: center;
+  ${(props) =>
+    props.isSubHeader ? 'justify-content:space-between; width:100%;' : ''}
   gap: 24px;
 `;
 export const Icon = styled.img`

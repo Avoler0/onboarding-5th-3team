@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #efefef;
-  height: 100vh;
+  height: 100%;
   overflow-y: scroll; // 없으면 화면 작을 때 흰 배경 나타남
 `;
 
@@ -30,12 +30,11 @@ function App() {
       <Route
         path="/main"
         element={
-          <>
-            <Layout />
+          <Layout>
             <MainWrapper>
               <Main />
             </MainWrapper>
-          </>
+          </Layout>
         }
       />
       <Route

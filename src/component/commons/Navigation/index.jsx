@@ -1,6 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
 import Header from './Header/HeaderContainer';
+import SubHeader from './SubHeader/SubHeaderContainer';
 
-export default function Layout() {
-  return <Header />;
+const Container = styled.div`
+  height: 100vh;
+  overflow-y: scroll;
+`;
+
+export default function Layout({ children }) {
+  return (
+    <Container>
+      <Header />
+      {children}
+      <SubHeader />
+    </Container>
+  );
 }
