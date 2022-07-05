@@ -21,6 +21,7 @@ const MainWrapper = styled.div`
   align-items: center;
   padding-top: 26px;
   gap: 16px;
+  height: 100%;
   background-color: #efefef;
 `;
 
