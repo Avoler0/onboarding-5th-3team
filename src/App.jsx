@@ -6,16 +6,22 @@ import Layout from './component/commons/Navigation';
 import Main from './pages/MainPage';
 
 const Wrapper = styled.div`
+  padding: 40px 0;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 5%;
+  background-color: #efefef;
+  height: 100vh;
+  overflow-y: scroll; // 없으면 화면 작을 때 흰 배경 나타남
 `;
 
 const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2%;
+  padding-top: 26px;
+  gap: 16px;
+  background-color: #efefef;
 `;
 
 function App() {

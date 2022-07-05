@@ -4,56 +4,47 @@ export const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2%;
-  width: 550px;
-  background-color: #eeeeee;
+  background-color: #efefef;
+  gap: 10px;
+  max-width: 350px;
+  margin-top: 100px;
 `;
 
 export const Contents = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
-  width: 500px;
   background-color: white;
-  margin-bottom: 15px;
+  padding: 20px 40px;
+  border: 1px solid lightgray;
+  gap: 22px;
 `;
 
 export const MainImg = styled.img`
-  width: 200px;
-  margin: 40px 0px 40px 0px;
+  margin: 20px 0;
 `;
 
-export const Label = styled.div`
-  margin-bottom: 5%;
-  font-size: 20px;
+export const InputWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
 `;
-
-export const EmailInput = styled.input`
+export const Input = styled.input`
   border-radius: 5px;
   border: ${(props) =>
-    props.emailValid ? '1px solid #eeeeee' : '1px solid #f77167'};
-  width: 400px;
+    props.valid ? '1px solid #eeeeee' : '1px solid #f77167'};
+  width: 100%;
   height: 50px;
-  padding-left: 5px;
-  margin-bottom: 20px;
-  font-size: 15px;
-`;
-
-export const PasswordInput = styled.input`
-  border-radius: 5px;
-  border: ${(props) =>
-    props.passwordValid ? '1px solid #eeeeee' : '1px solid #f77167'};
-  width: 400px;
-  height: 50px;
-  padding-left: 5px;
-  margin-bottom: 20px;
+  padding-left: 20px;
   font-size: 15px;
 `;
 
 export const Button = styled.button`
-  width: 400px;
+  width: 100%;
   height: 40px;
-  margin-bottom: 40px;
+
   background-color: ${(props) =>
     props.passwordValid && props.emailValid ? '#2c88dd' : '#9fc5e8'};
   border-radius: 5px;
@@ -64,23 +55,24 @@ export const Button = styled.button`
 
 export const Division = styled.div`
   display: flex;
-  margin-bottom: 30px;
+  width: 100%;
+  margin-bottom: 20px;
 `;
 
 export const Mark = styled.div`
-  width: 150px;
+  width: 100%;
   border-bottom: 2px solid #eeeeee;
 `;
 
 export const Or = styled.div`
-  margin: 0px 30px 0px 30px;
+  width: 50%;
+  text-align: center;
   line-height: 0px;
   font-size: 15px;
 `;
 
 export const FacebookWrapper = styled.div`
   display: flex;
-  margin-bottom: 30px;
   cursor: pointer;
   :hover {
     text-decoration: underline;
@@ -101,9 +93,7 @@ export const FacebookFont = styled.div`
 `;
 
 export const FindPassword = styled.div`
-  margin-bottom: 30px;
   color: #3d85c6;
-  font-weight: bold;
   font-size: 12px;
   cursor: pointer;
   :hover {
@@ -115,10 +105,12 @@ export const FindPassword = styled.div`
 export const SignUpWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 500px;
-  padding: 30px;
-  margin-bottom: 30px;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 16px;
   background-color: white;
+  border: 1px solid lightgray;
+  width: 100%;
 `;
 
 export const SignUpFont = styled.div`
@@ -139,16 +131,17 @@ export const SignUpButton = styled.div`
 
 export const AppDownFont = styled.div`
   font-size: 17px;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
 `;
 
 export const AppDownWrapper = styled.div`
   display: flex;
   justify-content: center;
+  padding: 0 30px;
+  width: 100%;
+  gap: 10px;
 `;
 
-export const AppStore = styled.img`
-  margin-right: 10px;
+export const StoreIcon = styled.img`
+  width: 100%;
 `;
-
-export const GooglePlay = styled.img``;
