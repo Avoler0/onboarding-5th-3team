@@ -46,7 +46,7 @@ export default function MainPageUI(props) {
                 show={showReplyOverlay}
                 setShow={setShowReplyOverlay}
               />
-           </
+           </div>
           <Reply el={el} />
         </S.Wrapper>
       ))}
