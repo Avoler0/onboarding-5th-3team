@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export default function MainPageUI(props) {
   const [showReplyOverlay, setShowReplyOverlay] = useState(false);
-  // console.log('클릭한 게시물', props.board);
+  console.log('클릭한 게시물', props.board);
   return (
     <>
       {props.board.map((el) => (
@@ -35,17 +35,17 @@ export default function MainPageUI(props) {
           </S.ButtonWrapper>
           <S.Like>좋아요 {el.like}</S.Like>
           <div onClick={() => setShowReplyOverlay((prev) => !prev)}>
-              댓글 모두 보기 : {el.id}
-            </div>
-            <Reply el={el} />
-          </S.Wrapper>
-          <div>
-            {showReplyOverlay && (
-              <ReplyOverlay
-                data={el}
-                show={showReplyOverlay}
-                setShow={setShowReplyOverlay}
-              />
+            댓글 모두 보기 : {el.id}
+          </div>
+          <Reply el={el} />
+
+          {showReplyOverlay && (
+            <ReplyOverlay
+              data={el}
+              show={showReplyOverlay}
+              setShow={setShowReplyOverlay}
+            />
+          )}
           <Reply el={el} />
         </S.Wrapper>
       ))}
