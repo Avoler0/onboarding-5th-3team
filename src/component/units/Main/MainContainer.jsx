@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MainPageUI from './MainPresenter';
 import axios from 'axios';
+import FeedDataService from '../../../services/DataService';
 
 export default function MainPage() {
   const [board, setBoard] = useState([]);
@@ -10,9 +11,8 @@ export default function MainPage() {
   const [like, setLike] = useState(false);
   let navigate = useNavigate();
 
-  const getPost = () => {
-    axios
-      .get('http://localhost:4000/posts')
+  const getPost = async () => {
+    await FeedDataService.getFeeds()
       .then((res) => {
         setBoard(res.data);
       })

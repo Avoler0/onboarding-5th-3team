@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './MainStyles';
 import Reply from '../Reply/ReplyContainer';
+import FeedDataService from '../../../services/DataService';
+import ReplyOverlay from '../Reply/ReplyOverlay';
 import axios from 'axios';
 
 export default function MainPageUI(props) {
+  const [showReplyOverlay, setShowReplyOverlay] = useState(false);
+  // console.log('클릭한 게시물', props.board);
   return (
     <>
       {props.board.map((el) => (
@@ -17,17 +21,12 @@ export default function MainPageUI(props) {
             <S.LikeImg
               id={el.id}
               onClick={async () => {
-                await axios
-                  .put(`http://localhost:4000/posts/${el.id}`, {
-                    like: el.like + 1,
-                    title: el.title,
-                    writer: el.writer,
-                    image: el.image,
-                    reply: el.reply,
-                  })
-                  .then((res) => {
-                    props.setLike((prev) => !prev);
-                  });
+                await FeedDataService.updateFeed({
+                  ...el,
+                  like: el.like + 1,
+                }).then((res) => {
+                  props.setLike((prev) => !prev);
+                });
               }}
               src="/Header/heart.png"
             />
@@ -35,6 +34,18 @@ export default function MainPageUI(props) {
             <S.MsgImg src="/Header/send.png" />
           </S.ButtonWrapper>
           <S.Like>좋아요 {el.like}</S.Like>
+          <div onClick={() => setShowReplyOverlay((prev) => !prev)}>
+              댓글 모두 보기 : {el.id}
+            </div>
+            <Reply el={el} />
+          </S.Wrapper>
+          <div>
+            {showReplyOverlay && (
+              <ReplyOverlay
+                data={el}
+                show={showReplyOverlay}
+                setShow={setShowReplyOverlay}
+              />
           <Reply el={el} />
         </S.Wrapper>
       ))}

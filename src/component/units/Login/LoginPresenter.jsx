@@ -4,7 +4,7 @@ import * as S from './LoginStyles';
 export default function LoginUI(props) {
   return (
     <S.LoginWrapper>
-      <S.Contents>
+      <S.Form onSubmit={props.LoginButton}>
         <S.MainImg src={'/Login/instargram.png'} />
         <S.InputWrapper>
           <S.Input
@@ -24,13 +24,10 @@ export default function LoginUI(props) {
         <S.Button
           passwordValid={props.passwordValid}
           emailValid={props.emailValid}
-          onClick={props.LoginButton}
         >
           로그인
         </S.Button>
         <S.Division>
-          <S.Mark></S.Mark>
-          <S.Or>또는</S.Or>
           <S.Mark></S.Mark>
         </S.Division>
         <S.FacebookWrapper>
@@ -38,8 +35,7 @@ export default function LoginUI(props) {
           <S.FacebookFont>Facebook으로 로그인</S.FacebookFont>
         </S.FacebookWrapper>
         <S.FindPassword>비밀번호를 잊으셨나요?</S.FindPassword>
-      </S.Contents>
-
+      </S.Form>
       <S.SignUpWrapper>
         <S.SignUpFont>계정이 없으신가요?</S.SignUpFont>
         <S.SignUpButton>가입하기</S.SignUpButton>
