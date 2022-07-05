@@ -1,20 +1,44 @@
 import styled from 'styled-components';
 import { breakPoints } from '../../media';
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
   width: 100%;
-  height: 50px;
-  padding: 10px;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
+`;
+
+export const Wrapper = styled.div`
+  max-width: 945px;
+  width: 100%;
+  margin: 0 auto;
+  height: 50px;
+  padding: 10px 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+`;
+
+export const MobileIcon = styled.img`
+  display: none;
+  @media ${breakPoints.mobile} {
+    display: block;
+  }
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+`;
+export const MainImg = styled.img`
+  width: 100px;
+  cursor: pointer;
 `;
 
 export const InputWrapper = styled.div`
-  width: 25%;
-  position: relative;
+  max-width: 260px;
+  width: 100%;
+  height: 100%;
   display: flex;
+  position: relative;
   align-items: center;
   @media ${breakPoints.mobile} {
     display: none;
@@ -22,50 +46,27 @@ export const InputWrapper = styled.div`
 `;
 export const SearchImg = styled.img`
   width: 15px;
-  margin-left: 5px;
+  margin-left: 16px;
   position: absolute;
 `;
 export const Input = styled.input`
   width: 100%;
   height: 100%;
-  padding-left: 25px;
-  border-radius: 10px;
-  background-color: lightgray;
+  padding-left: 40px;
+  border-radius: 6px;
+  background-color: #efefef;
 `;
-export const MainImg = styled.img`
-  cursor: pointer;
-`;
+
 export const NavIcon = styled.div`
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  gap: 24px;
 `;
-export const Home = styled.img`
-  width: 16%;
-  margin-right: 15%;
+export const Icon = styled.img`
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-`;
-export const Msg = styled.img`
-  width: 16%;
-  margin-right: 15%;
-  cursor: pointer;
-`;
-export const Write = styled.img`
-  width: 16%;
-  margin-right: 15%;
-  cursor: pointer;
-`;
-export const Navi = styled.img`
-  width: 16%;
-  margin-right: 15%;
-  cursor: pointer;
-`;
-export const Pick = styled.img`
-  width: 16%;
-  margin-right: 15%;
-  cursor: pointer;
-`;
-export const Logout = styled.img`
-  width: 16%;
-  margin-right: 15%;
-  cursor: pointer;
+  @media ${breakPoints.mobile} {
+    display: ${(props) => (props.isDesktopOnly ? 'none' : 'block')};
+  }
 `;
