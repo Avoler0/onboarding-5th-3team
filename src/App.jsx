@@ -15,16 +15,6 @@ const Wrapper = styled.div`
   overflow-y: scroll; // 없으면 화면 작을 때 흰 배경 나타남
 `;
 
-const MainWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 26px;
-  gap: 16px;
-  height: 100%;
-  background-color: #efefef;
-`;
-
 function App() {
   return (
     <Routes>
@@ -32,9 +22,7 @@ function App() {
         path="/main"
         element={
           <Layout>
-            <MainWrapper>
-              <Main />
-            </MainWrapper>
+            <Main />
           </Layout>
         }
       />
