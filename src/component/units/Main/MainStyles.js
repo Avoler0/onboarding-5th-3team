@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 40%;
-  margin-bottom: 10px;
+  max-width: 470px;
+  width: 100%;
   border: 1px solid lightgray;
   box-shadow: 1px 1px 1px -1px lightgray;
-  display: ${(props) => (props.load ? 'flex' : 'none')};
   flex-direction: column;
+  background-color: white;
+  display: ${(props) => (props.load ? 'flex' : 'none')};
 `;
 export const HeadWrapper = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ export const UserImg = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  background-color: gray;
+  background-color: #efefef;
 `;
 export const Head = styled.div`
   margin-left: 10px;

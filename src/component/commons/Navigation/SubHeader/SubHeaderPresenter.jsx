@@ -1,38 +1,43 @@
 import React from 'react';
-import * as S from './HeaderStyles';
+import styled from 'styled-components';
+import { breakPoints } from '../../media';
+import * as S from '../Header/HeaderStyles';
 
 const iconArr = [
   { path: '/Header/home.png', onClick: false, isDesktopOnly: true },
-  { path: '/Header/send.png', onClick: false, isDesktopOnly: false },
   { path: '/Header/add.png', onClick: false, isDesktopOnly: true },
   { path: '/Header/position.png', onClick: false, isDesktopOnly: true },
   { path: '/Header/heart.png', onClick: false, isDesktopOnly: true },
   { path: '/Header/logout.png', onClick: 'logout', isDesktopOnly: true },
 ];
 
-export default function HeaderUI(props) {
+const Container = styled.div`
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  display: none;
+  @media ${breakPoints.mobile} {
+    display: block;
+  }
+`;
+
+export default function SubHeaderUI(props) {
   return (
-    <S.Container>
+    <Container>
       <S.Wrapper>
-        <S.MobileIcon src="/Header/camera.png" />
-        <S.MainImg src="/Login/instargram.png" />
-
-        <S.InputWrapper>
-          <S.SearchImg src="/Header/search.png" />
-          <S.Input placeholder="검색" />
-        </S.InputWrapper>
-
-        <S.NavIcon>
+        <S.NavIcon isSubHeader>
           {iconArr.map((icon) => (
             <S.Icon
               key={icon.path}
               src={icon.path}
               onClick={icon.onClick && props.Logout}
-              isDesktopOnly={icon.isDesktopOnly}
             />
           ))}
         </S.NavIcon>
       </S.Wrapper>
-    </S.Container>
+    </Container>
   );
 }
