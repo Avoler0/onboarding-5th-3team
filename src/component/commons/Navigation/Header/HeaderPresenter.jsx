@@ -4,7 +4,9 @@ import * as S from './HeaderStyles';
 export default function HeaderUI(props) {
   return (
     <S.Wrapper>
+      <S.MobileIcon src="/Header/camera.png" />
       <S.MainImg src="/Login/instargram.png" />
+      <S.MobileIcon src="/Header/send.png" />
       <S.InputWrapper>
         <S.SearchImg src="/Header/search.png" />
         <S.Input />
