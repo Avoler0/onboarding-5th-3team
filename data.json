@@ -2,10 +2,26 @@
   "posts": [
     {
       "like": 18,
-      "title": "제목입니다",
-      "writer": "영희",
       "image": "https://source.unsplash.com/random/600x500",
-      "reply": [],
+      "writer": "영희",
+      "title": "제목입니다",
+      "reply": [
+        "ㅇㄹ",
+        "ㄹ",
+        "ㅇㄹ",
+        "ㅇㄹ",
+        "ㅇㄹ",
+        "ㅇㄹ",
+        "ㅇㄹ",
+        "ㅇㄹ",
+        "ㅇㄹ",
+        "ㅇㄹㅇㄹㅇ",
+        "ㅇㄹ",
+        "ㅇㄹ",
+        "ㅇㄹ",
+        "1234",
+        "12345"
+      ],
       "id": 1
     },
     {
@@ -19,14 +35,15 @@
       ]
     },
     {
-      "id": 3,
-      "title": "제목입니다",
-      "writer": "영희",
-      "image": "https://source.unsplash.com/random/700x1080",
       "like": 10,
+      "image": "https://source.unsplash.com/random/700x1080",
+      "writer": "영희",
+      "title": "제목입니다",
       "reply": [
-        "Dsada"
-      ]
+        "Dsada",
+        "dfff"
+      ],
+      "id": 3
     }
   ]
 }
