@@ -1,25 +1,34 @@
 import styled from 'styled-components';
+import { breakPoints } from '../../commons/media';
 
 export const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2%;
-  width: 550px;
+  width: 35%;
   background-color: #eeeeee;
+  @media ${breakPoints.tablet} {
+    width: 70%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
-
-export const Contents = styled.div`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
+  width: 100%;
   background-color: white;
   margin-bottom: 15px;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const MainImg = styled.img`
-  width: 200px;
+  width: 50%;
   margin: 40px 0px 40px 0px;
 `;
 
@@ -32,7 +41,7 @@ export const EmailInput = styled.input`
   border-radius: 5px;
   border: ${(props) =>
     props.emailValid ? '1px solid #eeeeee' : '1px solid #f77167'};
-  width: 400px;
+  width: 80%;
   height: 50px;
   padding-left: 5px;
   margin-bottom: 20px;
@@ -43,7 +52,7 @@ export const PasswordInput = styled.input`
   border-radius: 5px;
   border: ${(props) =>
     props.passwordValid ? '1px solid #eeeeee' : '1px solid #f77167'};
-  width: 400px;
+  width: 80%;
   height: 50px;
   padding-left: 5px;
   margin-bottom: 20px;
@@ -51,7 +60,7 @@ export const PasswordInput = styled.input`
 `;
 
 export const Button = styled.button`
-  width: 400px;
+  width: 80%;
   height: 40px;
   margin-bottom: 40px;
   background-color: ${(props) =>
@@ -64,18 +73,15 @@ export const Button = styled.button`
 
 export const Division = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
   margin-bottom: 30px;
 `;
 
 export const Mark = styled.div`
-  width: 150px;
+  width: 90%;
   border-bottom: 2px solid #eeeeee;
-`;
-
-export const Or = styled.div`
-  margin: 0px 30px 0px 30px;
-  line-height: 0px;
-  font-size: 15px;
 `;
 
 export const FacebookWrapper = styled.div`
@@ -89,7 +95,7 @@ export const FacebookWrapper = styled.div`
 `;
 
 export const Facebook = styled.img`
-  width: 27px;
+  width: 15%;
   height: 25px;
   margin-right: 5px;
 `;
@@ -115,7 +121,7 @@ export const FindPassword = styled.div`
 export const SignUpWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 500px;
+  width: 100%;
   padding: 30px;
   margin-bottom: 30px;
   background-color: white;
@@ -148,7 +154,10 @@ export const AppDownWrapper = styled.div`
 `;
 
 export const AppStore = styled.img`
+  width: 50%;
   margin-right: 10px;
 `;
 
-export const GooglePlay = styled.img``;
+export const GooglePlay = styled.img`
+  width: 50%;
+`;
