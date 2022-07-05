@@ -1,26 +1,38 @@
 {
   "posts": [
     {
-      "like": 18,
-      "image": "https://source.unsplash.com/random/600x500",
-      "writer": "영희",
+      "like": 29,
       "title": "제목입니다",
+      "writer": "영희",
+      "image": "https://source.unsplash.com/random/600x500",
       "reply": [
-        "ㅇㄹ",
-        "ㄹ",
-        "ㅇㄹ",
-        "ㅇㄹ",
-        "ㅇㄹ",
-        "ㅇㄹ",
-        "ㅇㄹ",
-        "ㅇㄹ",
-        "ㅇㄹ",
-        "ㅇㄹㅇㄹㅇ",
-        "ㅇㄹ",
-        "ㅇㄹ",
-        "ㅇㄹ",
-        "1234",
-        "12345"
+        {
+          "user": "asdf@asdf.com",
+          "text": [
+            "hahahah",
+            "qwer"
+          ]
+        },
+        {
+          "user": "asdf@asdf.com",
+          "text": "asdf"
+        },
+        {
+          "user": "asdf@asdf.com",
+          "text": "dsfg"
+        },
+        {
+          "user": "asdf@asdf.com",
+          "text": "fghj"
+        },
+        {
+          "user": "asdf@asdf.com",
+          "text": "fgh"
+        },
+        {
+          "user": "asdf@asdf.com",
+          "text": "vbmn"
+        }
       ],
       "id": 1
     },
@@ -31,19 +43,24 @@
       "image": "https://source.unsplash.com/random/900x500",
       "like": 10,
       "reply": [
-        "dsads"
+        {
+          "user": "asdf@asdf.com",
+          "text": "dsads"
+        }
       ]
     },
     {
+      "id": 3
       "like": 10,
       "image": "https://source.unsplash.com/random/700x1080",
       "writer": "영희",
       "title": "제목입니다",
       "reply": [
-        "Dsada",
-        "dfff"
-      ],
-      "id": 3
+        {
+          "user": "asdf@asdf.com",
+          "text": "하이루"
+        }
+      ]
     }
   ]
 }
