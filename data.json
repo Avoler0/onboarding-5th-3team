@@ -50,11 +50,11 @@
       ]
     },
     {
-      "id": 3,
-      "title": "제목입니다",
-      "writer": "영희",
-      "image": "https://source.unsplash.com/random/700x1080",
+      "id": 3
       "like": 10,
+      "image": "https://source.unsplash.com/random/700x1080",
+      "writer": "영희",
+      "title": "제목입니다",
       "reply": [
         {
           "user": "asdf@asdf.com",
