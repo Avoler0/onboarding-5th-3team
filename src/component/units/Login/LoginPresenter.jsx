@@ -8,18 +8,18 @@ export default function LoginUI(props) {
         <S.MainImg src={'/Login/instargram.png'} />
         <S.InputWrapper>
           <S.Input
-            valid={props.emailValid}
+            emailValid={props.emailValid}
             onChange={props.onChangeEmail}
             ref={props.emailRef}
             placeholder="전화번호, 사용자 이름 또는 이메일"
           ></S.Input>
-          <S.Input
-            valid={props.passwordValid}
+          <S.PasswordInput
+            passwordValid={props.passwordValid}
             onChange={props.onChangePassword}
             ref={props.passwordRef}
             type="password"
             placeholder="비밀번호"
-          ></S.Input>
+          ></S.PasswordInput>
         </S.InputWrapper>
         <S.Button
           passwordValid={props.passwordValid}
