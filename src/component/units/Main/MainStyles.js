@@ -65,6 +65,7 @@ export const Text = styled.div`
   white-space: nowrap;
   word-wrap: break-word;
   text-overflow: ellipsis;
+`;
 export const ReplyShow = styled.div`
   margin: 0px 10px 10px 10px;
   font-size: 14px;
