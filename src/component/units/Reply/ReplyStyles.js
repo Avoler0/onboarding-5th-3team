@@ -34,19 +34,15 @@ export const Comment = styled.div`
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  background-color: rgb(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100vh;
-  z-index: 10;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
 `;
 export const OverlayReply = styled.div`
-  position: absolute;
   display: flex;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  align-items: center;
   width: 110vh;
   height: 90vh;
   margin: 5vh auto;
