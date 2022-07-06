@@ -4,7 +4,6 @@ import axios from 'axios';
 import * as S from './ReplyStyles';
 
 export default function Overlay({ data, show, setShow }) {
-
   const { id, image, like, title, writer } = data;
   const [reply, setReply] = useState([]);
 
@@ -33,13 +32,11 @@ export default function Overlay({ data, show, setShow }) {
     console.log(data.user.split('@', 1));
   });
   return (
-    <>
-      <S.Overlay
-        onClick={() => {
-          setShow(false);
-        }}
-      ></S.Overlay>
-
+    <S.Overlay
+      onClick={() => {
+        setShow(false);
+      }}
+    >
       <S.OverlayReply>
         <S.FeedImg>
           <img
@@ -128,6 +125,6 @@ export default function Overlay({ data, show, setShow }) {
           </S.Writing>
         </S.FeedContent>
       </S.OverlayReply>
-    </>
+    </S.Overlay>
   );
 }
