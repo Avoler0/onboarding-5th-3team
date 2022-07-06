@@ -5,8 +5,13 @@ export default function ReplyUI(props) {
   return (
     <>
       <S.CommentWrapper>
-        {props.reply.map((el, index) => (
-          <S.Comment key={index}>{el}</S.Comment>
+        {props.reply?.map((el, index) => (
+          <S.Comment key={index}>
+            <div>
+              <span style={{ fontWeight: 'bold' }}>{el.user} </span>
+              <span>{el.text}</span>
+            </div>
+          </S.Comment>
         ))}
       </S.CommentWrapper>
       <form onSubmit={props.onSubmitReply}>
