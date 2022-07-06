@@ -8,7 +8,7 @@
       "reply": [
         {
           "user": "asdf@asdf.com",
-          "text": ["hahahah", "qwer"]
+          "text": "hahahah"
         },
         {
           "user": "asdf@asdf.com",
@@ -29,6 +29,14 @@
         {
           "user": "asdf@asdf.com",
           "text": "vbmn"
+        },
+        {
+          "user": "asdf@asdf.com",
+          "text": "adfsg"
+        },
+        {
+          "user": "asdf@asdf.com",
+          "text": "가아나ㅏㄹ"
         }
       ],
       "id": 1
@@ -48,16 +56,97 @@
     },
     {
       "id": 3,
-      "like": 10,
-      "image": "https://source.unsplash.com/random/700x1080",
-      "writer": "영희",
       "title": "제목입니다",
+      "writer": "영희",
+      "image": "https://source.unsplash.com/random/700x1080",
+      "like": 10,
       "reply": [
         {
           "user": "asdf@asdf.com",
           "text": "하이루"
         }
       ]
+    },
+    {
+      "like": 0,
+      "title": null,
+      "writer": "asdf@asdf.com",
+      "image": "https://source.unsplash.com/random/600x500",
+      "text": "오늘은...",
+      "reply": [],
+      "id": 4
+    },
+    {
+      "like": 0,
+      "title": null,
+      "writer": "asdf@asdf.com",
+      "image": "https://source.unsplash.com/random/600x500",
+      "text": "오늘은...",
+      "reply": [],
+      "id": 5
+    },
+    {
+      "like": 0,
+      "title": null,
+      "writer": "asdf@asdf.com",
+      "image": "https://source.unsplash.com/random/600x500",
+      "text": "오늘은 왠지...",
+      "reply": [],
+      "id": 6
+    },
+    {
+      "like": 0,
+      "title": null,
+      "writer": "asdf@asdf.com",
+      "image": "https://source.unsplash.com/random/600x500",
+      "text": "오늘은 왠지...",
+      "reply": [],
+      "id": 7
+    },
+    {
+      "like": 0,
+      "title": null,
+      "writer": "asdf@asdf.com",
+      "image": "https://source.unsplash.com/random/600x500",
+      "text": "ㅁㄴㅇ러ㅏ",
+      "reply": [],
+      "id": 8
+    },
+    {
+      "like": 0,
+      "title": null,
+      "writer": "asdf@asdf.com",
+      "image": "https://source.unsplash.com/random/600x500",
+      "text": "asdfj;kladfg",
+      "reply": [],
+      "id": 9
+    },
+    {
+      "like": 0,
+      "title": null,
+      "writer": "asdf@asdf.com",
+      "image": "https://source.unsplash.com/random/600x500",
+      "text": "asdfasdffdsgh",
+      "reply": [],
+      "id": 10
+    },
+    {
+      "like": 0,
+      "title": null,
+      "writer": "asdf@asdf.com",
+      "image": "https://source.unsplash.com/random/600x500",
+      "text": "rㅏ가가ㅁㄴㅇ리;젇ㄱㅂ",
+      "reply": [],
+      "id": 11
+    },
+    {
+      "like": 0,
+      "title": null,
+      "writer": "asdf@asdf.com",
+      "image": "https://source.unsplash.com/random/600x500",
+      "text": "ㅇㄴㄹㅎㅇㄹㅎ",
+      "reply": [],
+      "id": 12
     }
   ]
 }

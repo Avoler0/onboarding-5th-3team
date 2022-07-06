@@ -9,10 +9,13 @@ export default function MainPageUI(props) {
   const [showReplyOverlay, setShowReplyOverlay] = useState(false);
 
   return (
-    <>
-      {props.board.map((el) => {
+    <>   
+      {props.board
+        .sort((a, b) => b.id - a.id)
+        .map((el) => {
         const hasLike = getLoginUser().like[el.id];
-        return (
+        return 
+        (
           <S.Wrapper load={props.loading} key={el.id}>
             <S.HeadWrapper>
               <S.UserImg></S.UserImg>
@@ -75,7 +78,7 @@ export default function MainPageUI(props) {
               />
             )}
           </S.Wrapper>
-        );
+        )};
       })}
     </>
   );

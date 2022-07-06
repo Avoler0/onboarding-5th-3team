@@ -20,11 +20,11 @@ const Div = styled.div`
   gap: 16px;
 `;
 
-export default function Layout({ children }) {
+export default function Layout({ children, toggleCreatePost }) {
   return (
     <>
       <Container>
-        <Header />
+        <Header toggleCreatePost={toggleCreatePost} />
         <Div>{children}</Div>
         <SubHeader />
       </Container>
