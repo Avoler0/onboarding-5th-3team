@@ -20,7 +20,8 @@ class FeedDataService {
   }
 
   async updateFeed(prevFeed, newComment) {
-    const commentId = prevFeed.reply.sort((a, b) => b.id - a.id)[0].id + 1;
+    const commentId =
+      prevFeed.reply.sort((a, b) => b.id - a.id)[0]?.id + 1 ?? 1;
     const reply = [{ id: commentId, ...newComment }, ...prevFeed.reply];
     const data = {
       ...prevFeed,

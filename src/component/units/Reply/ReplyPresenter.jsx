@@ -6,7 +6,7 @@ const getNameFromEmail = (email) => email?.split('@')[0];
 
 export default function ReplyUI(props) {
   const [showAll, setShowAll] = useState(false);
-
+  
   const hideReply = (reply) => reply.length > 2;
 
   return (
@@ -24,7 +24,7 @@ export default function ReplyUI(props) {
         })}
         {!showAll && hideReply(props.reply) && (
           <S.Button onClick={() => setShowAll((prev) => !prev)}>
-            ... <span>+{props.reply.length - 3}</span>
+            더보기 ... <span>+{props.reply.length - 3}</span>
           </S.Button>
         )}
       </S.CommentWrapper>
@@ -36,7 +36,9 @@ export default function ReplyUI(props) {
             type="text"
             placeholder="댓글을 입력해주세요."
           />
-          <S.Submit>게시</S.Submit>
+          <S.Submit>
+            <div>게시</div>
+          </S.Submit>
         </S.ReplyWrapper>
       </S.Form>
     </>
