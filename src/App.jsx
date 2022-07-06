@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import styled from 'styled-components';
 import Layout from './component/commons/Navigation';
 import Main from './pages/MainPage';
+import { useState } from 'react';
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,16 +20,21 @@ const MainWrapper = styled.div`
 `;
 
 function App() {
+  const [isCreatePostOpen, setIsCreatePostOpen] = useState(false);
+  const toggleCreatePost = () => {
+    setIsCreatePostOpen(!isCreatePostOpen);
+  };
   return (
     <Routes>
       <Route
         path="/main"
         element={
-          <>
-            <Layout>
-              <Main />
-            </Layout>
-          </>
+          <Layout toggleCreatePost={toggleCreatePost}>
+            <Main
+              toggleCreatePost={toggleCreatePost}
+              isCreatePostOpen={isCreatePostOpen}
+            />
+          </Layout>
         }
       />
       <Route
