@@ -33,7 +33,7 @@ export default function SubHeaderUI(props) {
             <S.Icon
               key={icon.path}
               src={icon.path}
-              onClick={icon.onClick && props.Logout}
+              onClick={icon.onClick === 'logout' ? props.Logout : null}
             />
           ))}
         </S.NavIcon>

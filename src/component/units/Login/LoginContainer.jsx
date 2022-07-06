@@ -6,6 +6,7 @@ import {
   checkEmail,
   checkPassword,
 } from '../../commons/utils/loginValidation.js';
+import { setLoginUser } from '../../commons/utils/lib';
 
 export default function LoginPage() {
   const emailRef = useRef(null);
@@ -29,7 +30,11 @@ export default function LoginPage() {
       return alert('이메일과 비밀번호를 정확하게 입력해주세요');
     }
     if (passwordValid && emailValid) {
-      localStorage.setItem('LoginUser', emailRef.current?.value);
+      const user = {
+        email: emailRef.current?.value,
+        like: {},
+      };
+      setLoginUser(user);
       navigate('/main');
     }
   };

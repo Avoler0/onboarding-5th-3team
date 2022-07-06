@@ -25,7 +25,6 @@ export default function HeaderUI({ logout, toggleCreatePost }) {
             <S.SearchImg src="/Header/search.png" />
             <S.Input placeholder="검색" />
           </S.InputWrapper>
-
           <S.NavIcon>
             {iconArr.map((icon) => (
               <S.Icon

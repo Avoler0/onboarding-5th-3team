@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MainPageUI from './MainPresenter';
 import FeedDataService from '../../../services/DataService';
+import { getLoginUser } from '../../commons/utils/lib';
 import CreatePostContainer from '../CreatePost/CreatePostContainer';
 
 export default function MainPage({ toggleCreatePost, isCreatePostOpen }) {
@@ -37,7 +38,7 @@ export default function MainPage({ toggleCreatePost, isCreatePostOpen }) {
   };
 
   useEffect(() => {
-    localStorage.getItem('LoginUser') === null ? navigate('/') : getPost();
+    getLoginUser() === null ? navigate('/') : getPost();
   }, [like]);
 
   return (
