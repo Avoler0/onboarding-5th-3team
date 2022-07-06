@@ -22,7 +22,7 @@ export default function MainPageUI(props) {
             <S.ButtonWrapper>
               <S.LikeImg
                 id={el.id}
-                enabled={hasLike}
+                hasLike={hasLike}
                 onClick={async () => {
                   await FeedDataService.toggleLike(el).then((res) => {
                     props.setLike((prev) => !prev);
@@ -67,7 +67,6 @@ export default function MainPageUI(props) {
               댓글 모두 보기 : {el.id}
             </div>
             <Reply el={el} />
-
             {showReplyOverlay && (
               <ReplyOverlay
                 data={el}
@@ -75,7 +74,6 @@ export default function MainPageUI(props) {
                 setShow={setShowReplyOverlay}
               />
             )}
-            <Reply el={el} />
           </S.Wrapper>
         );
       })}
