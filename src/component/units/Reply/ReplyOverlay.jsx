@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import FeedDataService from '../../../services/DataService';
+import { getLoginUser } from '../../commons/utils/lib';
 import * as S from './ReplyStyles';
 
 export default function Overlay({ data, show, setShow }) {
   const { id, image, like, title, writer } = data;
   const [reply, setReply] = useState([]);
+  const [feed, setFeed] = useState(data);
+  const SubmitRef = useRef(null);
+  function getReply() {
+    FeedDataService.getFeed(id)
+      .then((res) => {
+        setReply(res.data.reply);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  }
 
+  const onSubmitReply = async (e) => {
+    // 댓글 추가
+    e.preventDefault();
+    setReply([...reply, SubmitRef.current?.value]);
+    await postReply(data, {
+      user: getLoginUser().email,
+      text: SubmitRef.current?.value,
+    });
+    SubmitRef.current.value = '';
+    getReply();
+  };
+  const postReply = async (prevFeed, newComment) => {
+    const { data } = await FeedDataService.updateFeed(prevFeed, newComment);
+    setFeed(() => data);
+  };
   useEffect(() => {
-    // axios
-    //   .get(`http://localhost:4000/posts/${id}`)
-    //   .then((res) => {
-    //     setReply(res.data.reply);
-    //   })
-    //   .catch((error) => {
-    //     alert(error.message);
-    //   });
+    getReply();
     // 스크롤 방지
     document.body.style.cssText = `
     position: fixed; 
@@ -28,9 +48,7 @@ export default function Overlay({ data, show, setShow }) {
       window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
     };
   }, []);
-  reply.map((data) => {
-    console.log(data.user.split('@', 1));
-  });
+  console.log('오버레이 리플라이', reply);
   return (
     <S.Overlay
       onClick={(e) => {
@@ -41,7 +59,11 @@ export default function Overlay({ data, show, setShow }) {
         <S.FeedImg>
           <img
             src={image}
-            style={{ display: 'block', width: '100%', height: '100%' }}
+            style={{
+              display: 'block',
+              maxWidth: '100%',
+              maxHeight: '100%',
+            }}
           />
         </S.FeedImg>
         <S.FeedContent>
@@ -52,25 +74,12 @@ export default function Overlay({ data, show, setShow }) {
               </div>
             </S.HIco>
             <S.HName>
-              <span>{writer.split('@', 1)}</span>
+              <span>{feed.writer.split('@', 1)}</span>
             </S.HName>
           </S.Header>
           <S.Middle id="middle">
-            <S.Content style={{ display: 'flex' }}>
-              <S.User>
-                <S.HIco id="icon">
-                  <div>
-                    <S.IcoCircle />
-                  </div>
-                </S.HIco>
-              </S.User>
-              <S.HName style={{ display: 'inline-flex', marginRight: '5px' }}>
-                <span>{writer.split('@', 1)}</span>
-              </S.HName>
-              <S.ReplyContent>{title}</S.ReplyContent>
-            </S.Content>
-            {reply.map((data, index) => (
-              <S.Content key={index}>
+            {feed.reply.map((data) => (
+              <S.Content key={data.id}>
                 <S.User>
                   <S.HIco id="icon">
                     <div>
@@ -111,13 +120,19 @@ export default function Overlay({ data, show, setShow }) {
               2일 전
             </div>
           </S.Menu>
-          <S.Writing>
-            <S.Form onSubmit={(e) => e.preventDefault()}>
-              <img src="/smile.png" />
-              <input placeholder="댓글 달기..."></input>
-              <button>
-                <div>게시</div>
-              </button>
+          <S.Writing id="writing">
+            <S.Form onSubmit={onSubmitReply}>
+              <S.ReplyWrapper>
+                <S.ReplyImg src="/smile.png" />
+                <S.ReplyInput
+                  ref={SubmitRef}
+                  type="text"
+                  placeholder="댓글을 입력해주세요."
+                />
+                <S.Submit>
+                  <div>게시</div>
+                </S.Submit>
+              </S.ReplyWrapper>
             </S.Form>
           </S.Writing>
         </S.FeedContent>
