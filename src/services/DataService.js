@@ -19,7 +19,14 @@ class FeedDataService {
     return http.post('http://localhost:4000/posts', data);
   }
 
-  updateFeed(data) {
+  async updateFeed(prevFeed, newComment) {
+    const commentId = prevFeed.reply.sort((a, b) => b.id - a.id)[0].id + 1;
+    const reply = [{ id: commentId, ...newComment }, ...prevFeed.reply];
+    const data = {
+      ...prevFeed,
+      reply,
+    };
+
     return http.put(`http://localhost:4000/posts/${data.id}`, data);
   }
 

@@ -63,7 +63,7 @@ export default function MainFeed(props) {
       </S.ButtonWrapper>
       <S.Like>좋아요 {like}</S.Like>
       <div onClick={() => setShowReplyOverlay((prev) => !prev)}>
-        댓글 모두 보기 : {id}
+        오버레이 보기 : {id}
       </div>
       <Reply el={board} />
       {showReplyOverlay && (

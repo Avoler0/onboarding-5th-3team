@@ -29,6 +29,8 @@ export const CommentWrapper = styled.div`
   margin-bottom: 10px;
 `;
 export const Comment = styled.div`
+  display: ${(props) => (props.isDisplay ? 'flex' : 'none')};
+  gap: 10px;
   font-size: 10px;
 `;
 export const Overlay = styled.div`
@@ -165,5 +167,18 @@ export const Form = styled.form`
       color: gray;
       padding: 0;
     }
+  }
+`;
+
+export const Button = styled.button`
+  color: gray;
+  width: fit-content;
+  background-color: white;
+  cursor: pointer;
+  span {
+    font-size: 10px;
+  }
+  :hover {
+    color: black;
   }
 `;
