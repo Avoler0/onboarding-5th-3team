@@ -5,6 +5,7 @@ import FeedDataService from '../../../services/DataService';
 import ReplyOverlay from '../Reply/ReplyOverlay';
 import { getLoginUser, getNameFromEmail } from '../../commons/utils/lib';
 import { ReactComponent as HeartIco } from '../../../SVG/instagram-heart.svg';
+import { ReactComponent as HeartIcoFill } from '../../../SVG/instagram-heart2.svg';
 import { ReactComponent as CommentIco } from '../../../SVG/instagram-comment.svg';
 import { ReactComponent as ShareIco } from '../../../SVG/instagram-share.svg';
 export default function MainFeed(props) {
@@ -32,7 +33,7 @@ export default function MainFeed(props) {
               });
             }}
           >
-            {hasLike ? <HeartIco fill="red" /> : <HeartIco />}
+            {hasLike ? <HeartIcoFill /> : <HeartIco />}
           </S.MIcon>
           <S.MIcon>
             <CommentIco />
@@ -61,6 +62,7 @@ export default function MainFeed(props) {
       <Reply el={board} />
       {showReplyOverlay && (
         <ReplyOverlay
+          setLike={setLike}
           data={board}
           show={showReplyOverlay}
           setShow={setShowReplyOverlay}
