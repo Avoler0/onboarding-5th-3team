@@ -29,13 +29,13 @@
         {
           "id": 1,
           "user": "asdf@asdf.com",
-          "text": "dsadss"
+          "text": "dsads"
         }
       ]
     },
     {
       "id": 3,
-      "like": 10,
+      "like": 11,
       "image": "https://source.unsplash.com/random/700x1080",
       "writer": "영희",
       "title": "제목입니다",
@@ -103,7 +103,28 @@
       "writer": "asdf@asdf.com",
       "image": "https://source.unsplash.com/random/600x500",
       "text": "another new post",
-      "reply": [],
+      "reply": [
+        {
+          "id": 3,
+          "user": "1234@123.123",
+          "text": "34"
+        },
+        {
+          "id": 2,
+          "user": "1234@123.123",
+          "text": "512"
+        },
+        {
+          "id": 1,
+          "user": "1234@123.123",
+          "text": "51234"
+        },
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "1234"
+        }
+      ],
       "id": 8
     },
     {
@@ -112,7 +133,53 @@
       "writer": "asdf@asdf.com",
       "image": "https://source.unsplash.com/random/600x500",
       "text": "xzcvxcvz",
-      "reply": [],
+      "reply": [
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "1234"
+        },
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "1"
+        },
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "4"
+        },
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "123"
+        },
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "5"
+        },
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "23"
+        },
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "51"
+        },
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "1234"
+        },
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "4"
+        }
+      ],
       "id": 9
     },
     {
@@ -121,7 +188,18 @@
       "writer": "asdf@asdf.com",
       "image": "https://source.unsplash.com/random/600x500",
       "text": "testing...",
-      "reply": [],
+      "reply": [
+        {
+          "id": 1,
+          "user": "1234@123.123",
+          "text": "1234"
+        },
+        {
+          "id": null,
+          "user": "1234@123.123",
+          "text": "5123"
+        }
+      ],
       "id": 10
     },
     {
@@ -131,6 +209,11 @@
       "image": "https://source.unsplash.com/random/600x500",
       "text": "asdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfasdfasdfasdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfdfsadfasdfasdfsdafasdfasdfasdfasdasd",
       "reply": [
+        {
+          "id": 3,
+          "user": "1234@123.123",
+          "text": "5"
+        },
         {
           "id": 2,
           "user": "1234@123.123",
@@ -150,7 +233,7 @@
       "id": 11
     },
     {
-      "like": 0,
+      "like": 1,
       "title": null,
       "writer": "1234@123.123",
       "image": "https://source.unsplash.com/random/600x500",

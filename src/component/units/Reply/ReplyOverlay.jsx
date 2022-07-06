@@ -4,12 +4,17 @@ import FeedDataService from '../../../services/DataService';
 import { getLoginUser } from '../../commons/utils/lib';
 import * as S from './ReplyStyles';
 import { getNameFromEmail } from '../../commons/utils/lib';
+import { ReactComponent as HeartIco } from '../../../SVG/instagram-heart.svg';
+import { ReactComponent as HeartIcoFill } from '../../../SVG/instagram-heart2.svg';
+import { ReactComponent as CommentIco } from '../../../SVG/instagram-comment.svg';
+import { ReactComponent as ShareIco } from '../../../SVG/instagram-share.svg';
 
-export default function Overlay({ data, show, setShow }) {
+export default function Overlay({ data, show, setShow, setLike }) {
   const { id, image, like, title, writer } = data;
   const [reply, setReply] = useState([]);
   const [feed, setFeed] = useState(data);
   const SubmitRef = useRef(null);
+  const hasLike = getLoginUser().like[id];
   function getReply() {
     FeedDataService.getFeed(id)
       .then((res) => {
@@ -19,12 +24,12 @@ export default function Overlay({ data, show, setShow }) {
         alert(error.message);
       });
   }
-
+  console.log('피드', feed);
   const onSubmitReply = async (e) => {
     // 댓글 추가
     e.preventDefault();
     setReply([...reply, SubmitRef.current?.value]);
-    await postReply(data, {
+    await postReply(feed, {
       user: getLoginUser().email,
       text: SubmitRef.current?.value,
     });
@@ -74,9 +79,7 @@ export default function Overlay({ data, show, setShow }) {
               </div>
             </S.HIco>
             <S.HName>
-              <span>
-                {getNameFromEmail(writer)}
-              </span>
+              <span>{getNameFromEmail(writer)}</span>
             </S.HName>
           </S.Header>
           <S.Middle id="middle">
@@ -98,20 +101,27 @@ export default function Overlay({ data, show, setShow }) {
           </S.Middle>
           <S.Menu>
             <S.MSection>
-              <S.MIcon style={{ marginLeft: '-8px' }}>
-                <img src="Header/heart.png" />
+              <S.MIcon
+                style={{ marginLeft: '-8px' }}
+                id={id}
+                hasLike={hasLike}
+                onClick={async () => {
+                  await FeedDataService.toggleLike(data).then((res) => {
+                    setLike((prev) => !prev);
+                  });
+                }}
+              >
+                {hasLike ? <HeartIcoFill fill="red" /> : <HeartIco />}
               </S.MIcon>
               <S.MIcon>
-                <img src="comment.png" />
+                <CommentIco />
               </S.MIcon>
               <S.MIcon>
-                <img src="Header/send.png" />
+                <ShareIco />
               </S.MIcon>
               <S.MIcon></S.MIcon>
             </S.MSection>
-            <S.MSection style={{ padding: '0 16px 0 16px', border: '0' }}>
-              좋아요 100개
-            </S.MSection>
+            <S.MSection>좋아요 {like}개</S.MSection>
             <div
               style={{
                 padding: '15px 16px 0 16px',

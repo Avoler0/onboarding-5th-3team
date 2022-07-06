@@ -130,8 +130,10 @@ export const Menu = styled.div`
   height: 13%;
 `;
 export const MSection = styled.section`
-  border-top: 1px solid #c7c2c2;
-  padding: 6px 16px;
+  display: flex;
+  margin-top: 4px;
+  padding: 0 12px;
+  /* border-top: 1px solid #c7c2c2; */
   font-size: 14px;
   font-weight: bold;
 `;
@@ -140,6 +142,15 @@ export const MIcon = styled.span`
   display: inline-block;
   width: 40px;
   height: 40px;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
   img {
     position: absolute;
     top: 0;
@@ -153,6 +164,7 @@ export const Writing = styled.div`
   padding: 6px 16px;
   padding: 6px 16px;
   border-top: 1px solid #c7c2c2;
+  z-index: 11;
 `;
 export const Form = styled.form`
   display: flex;
