@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { breakPoints } from '../../commons/media';
 
 export const ReplyWrapper = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
+  width: 100%;
 `;
 export const ReplyImg = styled.img`
-  width: 3%;
-  margin: 0px 3px 0px 10px;
+  width: 16px;
+  margin-right: 10px;
 `;
 export const ReplyInput = styled.input`
   width: 80%;
@@ -16,12 +16,6 @@ export const ReplyInput = styled.input`
   ::placeholder {
     font-size: 10px;
   }
-`;
-export const Submit = styled.button`
-  background-color: white;
-  font-size: 10px;
-  cursor: pointer;
-  color: #3e99df;
 `;
 export const CommentWrapper = styled.div`
   display: flex;
@@ -35,6 +29,9 @@ export const Comment = styled.div`
   font-size: 14px;
 `;
 export const Overlay = styled.div`
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
   position: fixed;
   top: 0;
   right: 0;
@@ -46,41 +43,39 @@ export const Overlay = styled.div`
 export const OverlayReply = styled.div`
   display: flex;
   position: relative;
-  width: 110vh;
-  height: 90vh;
-  margin: 5vh auto;
+  max-width: 1000px;
+  max-height: 700px;
+  margin: auto;
+  height: 100%;
+  /* width: 100%; */
   background-color: white;
   border-radius: 0 4px 4px 0;
   z-index: 11;
 `;
-export const FeedImg = styled.div`
-  display: flex;
-  align-items: center;
+export const FeedImg = styled.img`
+  max-width: 700px;
+  width: 100%;
   background-color: black;
-  height: 100%;
-  @media (min-height: 768px) and (max-width: 1023px) {
-    display: none;
-  }
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
 `;
 
 export const FeedContent = styled.div`
-  width: 500px;
-  min-height: 100%;
-  border-radius: 0 4px 4px 0;
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 250px;
+  padding: 10px 0;
   border: 1px solid #c7c2c2;
   @media ${breakPoints.mobile} {
-    width: 100%;
   }
 `;
 export const Header = styled.header`
+  padding: 0 16px;
+  padding-bottom: 10px;
   display: flex;
-  width: 100%;
-  padding: 5px;
-  height: 50px;
+  gap: 10px;
   border-bottom: 1px solid #c7c2c2;
+  align-items: center;
 `;
 export const HIco = styled.div`
   display: table;
@@ -92,12 +87,14 @@ export const HIco = styled.div`
     vertical-align: middle;
   }
 `;
+
 export const IcoCircle = styled.div`
-  width: 35px;
-  height: 35px;
+  width: ${(props) => (props.small ? '24px' : '30px')};
+  height: ${(props) => (props.small ? '24px' : '30px')};
   border-radius: 100%;
   background-color: gray;
 `;
+
 export const HName = styled.div`
   display: table;
   margin-left: 10px;
@@ -108,76 +105,65 @@ export const HName = styled.div`
     font-weight: bold;
   }
 `;
-export const Middle = styled.div`
+export const Contents = styled.div`
+  height: 100%;
   display: block;
   padding: 10px 5px;
   display: flex;
   flex-direction: column;
-  height: 75%;
+  overflow-y: scroll;
+  gap: 10px;
+  border-bottom: 1px solid #c7c2c2;
 `;
-export const User = styled.div``;
 export const Content = styled.div`
   display: flex;
-  margin: 3px 0;
-  line-height: 20px;
-  text-align: center;
+  padding-left: 2px;
+  align-items: center;
 `;
 export const ReplyContent = styled.div`
   display: inline;
   font-size: 12px;
 `;
 export const Menu = styled.div`
-  height: 13%;
+  padding: 0 16px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #c7c2c2;
 `;
-export const MSection = styled.section`
-  border-top: 1px solid #c7c2c2;
-  padding: 6px 16px;
-  font-size: 14px;
-  font-weight: bold;
-`;
-export const MIcon = styled.span`
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
+export const Icon = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
   img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 8px;
+    width: 20px;
+    height: 20px;
+  }
+  span {
+    font-size: 12px;
+    color: gray;
   }
 `;
-export const Writing = styled.div`
-  padding: 6px 16px;
-  padding: 6px 16px;
-  border-top: 1px solid #c7c2c2;
-`;
+
 export const Form = styled.form`
   display: flex;
   align-items: center;
   height: 40px;
+  padding: 0 16px;
+  padding-top: 10px;
+  width: 100%;
+`;
 
-  img {
-    width: 24px;
-    height: 24px;
-  }
-  input {
-    margin-left: 10px;
-    width: 399px;
-  }
-  button {
-    border: 0;
-    background-color: transparent;
-    div {
-      width: 28px;
-      height: 18px;
-      font-size: 14px;
-      font-weight: bold;
-      color: gray;
-      padding: 0;
-    }
+export const Submit = styled.button`
+  background-color: white;
+  white-space: nowrap;
+  font-size: 12px;
+  cursor: pointer;
+  color: #3e99df;
+  :hover {
+    font-weight: 600;
   }
 `;
 
