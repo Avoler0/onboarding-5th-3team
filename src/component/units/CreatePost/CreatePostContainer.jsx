@@ -11,7 +11,6 @@ export default function CreatePostContainer({ savePost, getPost, close }) {
       setText={setText}
       savePost={() => {
         savePost(text);
-        getPost();
         close();
       }}
       close={close}

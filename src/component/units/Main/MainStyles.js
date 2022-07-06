@@ -57,6 +57,14 @@ export const Loading = styled.div`
   justify-content: center;
   align-items: center;
 `;
+export const Text = styled.div`
+  padding: 0 10px;
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
 export const ReplyShow = styled.div`
   margin: 0px 10px 10px 10px;
   font-size: 14px;

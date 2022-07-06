@@ -12,7 +12,7 @@ export default function CreatePostUI({ text, setText, savePost, close }) {
       <S.Wrapper>
         <S.Header>
           <h1>새 게시물 만들기</h1>
-          <span onClick={savePost} style={{ color: 'skyblue' }}>
+          <span onClick={savePost} style={{ color: 'rgb(0,149,246)' }}>
             공유하기
           </span>
         </S.Header>
@@ -23,14 +23,29 @@ export default function CreatePostUI({ text, setText, savePost, close }) {
           <S.BodyRight className="right">
             <S.UserInfo>
               <S.UserImg />
-              <span>${localStorage.getItem('LoginUser')}</span>
+              <span>
+                {
+                  JSON.parse(localStorage.getItem('LoginUser')).email.split(
+                    '@'
+                  )[0]
+                }
+              </span>
             </S.UserInfo>
             <S.TextInput
               placeholder="문구 입력..."
-              onChange={(e) => setText(e.target.value)}
+              onChange={(e) => {
+                if (e.target.value.length <= 2200) setText(e.target.value);
+                else {
+                  const limitedText = text.slice(0, 2200);
+                  setText(limitedText);
+                  e.value = limitedText;
+                }
+              }}
               value={text}
             ></S.TextInput>
-            <S.LetterCount>{text.length}/2,200</S.LetterCount>
+            <S.LetterCount>
+              {text.length.toLocaleString('en-US')}/2,200
+            </S.LetterCount>
           </S.BodyRight>
         </S.Body>
       </S.Wrapper>
