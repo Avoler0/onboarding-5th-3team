@@ -9,7 +9,7 @@ export default function ReplyPage(props) {
   const [feed, setFeed] = useState(props.el);
   const SubmitRef = useRef(null);
 
-  const onSubmitReply = async (e) => {
+  const onSubmitReply = async (e) => { // 댓글 추가
     e.preventDefault();
     setReply([...reply, SubmitRef.current?.value]);
     await postReply(feed, {

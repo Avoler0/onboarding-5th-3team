@@ -70,7 +70,7 @@ export default function Overlay({ data, show, setShow }) {
               <S.HName style={{ display: 'inline-flex', marginRight: '5px' }}>
                 <span>{writer}</span>
               </S.HName>
-              <S.ReplyContent>글 내용</S.ReplyContent>
+              <S.ReplyContent>{title}</S.ReplyContent>
             </S.Content>
             {reply.map((data, index) => (
               <S.Content key={index}>
