@@ -7,6 +7,8 @@ const getNameFromEmail = (email) => email?.split('@')[0];
 export default function ReplyUI(props) {
   const [showAll, setShowAll] = useState(false);
 
+  const hideReply = (reply) => reply.length > 2;
+
   return (
     <>
       <S.CommentWrapper>
@@ -20,7 +22,7 @@ export default function ReplyUI(props) {
             </S.Comment>
           );
         })}
-        {!showAll && (
+        {!showAll && hideReply(props.reply) && (
           <S.Button onClick={() => setShowAll((prev) => !prev)}>
             ... <span>+{props.reply.length - 3}</span>
           </S.Button>
