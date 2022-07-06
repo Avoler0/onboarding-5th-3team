@@ -33,8 +33,8 @@ export default function Overlay({ data, show, setShow }) {
   });
   return (
     <S.Overlay
-      onClick={() => {
-        setShow(false);
+      onClick={(e) => {
+        if (e.target == e.currentTarget) setShow(false);
       }}
     >
       <S.OverlayReply>
@@ -52,13 +52,10 @@ export default function Overlay({ data, show, setShow }) {
               </div>
             </S.HIco>
             <S.HName>
-              <span>
-                {writer}
-                {id}
-              </span>
+              <span>{writer.split('@', 1)}</span>
             </S.HName>
           </S.Header>
-          <S.Middle>
+          <S.Middle id="middle">
             <S.Content style={{ display: 'flex' }}>
               <S.User>
                 <S.HIco id="icon">
@@ -68,7 +65,7 @@ export default function Overlay({ data, show, setShow }) {
                 </S.HIco>
               </S.User>
               <S.HName style={{ display: 'inline-flex', marginRight: '5px' }}>
-                <span>{writer}</span>
+                <span>{writer.split('@', 1)}</span>
               </S.HName>
               <S.ReplyContent>{title}</S.ReplyContent>
             </S.Content>

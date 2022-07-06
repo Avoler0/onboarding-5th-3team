@@ -40,12 +40,12 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 99;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.6);
 `;
 export const OverlayReply = styled.div`
   display: flex;
-  align-items: center;
+  position: relative;
   width: 110vh;
   height: 90vh;
   margin: 5vh auto;
@@ -105,6 +105,7 @@ export const HName = styled.div`
   }
 `;
 export const Middle = styled.div`
+  display: block;
   padding: 10px 5px;
   display: flex;
   flex-direction: column;

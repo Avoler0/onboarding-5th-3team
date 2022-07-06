@@ -41,6 +41,41 @@
       "title": "제목입니다",
       "reply": [
         {
+          "id": 27,
+          "user": "1234@123.123",
+          "text": "534"
+        },
+        {
+          "id": 26,
+          "user": "1234@123.123",
+          "text": "1234"
+        },
+        {
+          "id": 25,
+          "user": "1234@123.123",
+          "text": "12345"
+        },
+        {
+          "id": 24,
+          "user": "1234@123.123",
+          "text": "423"
+        },
+        {
+          "id": 23,
+          "user": "1234@123.123",
+          "text": "ㅗㄷ"
+        },
+        {
+          "id": 22,
+          "user": "1234@123.123",
+          "text": "1234"
+        },
+        {
+          "id": 21,
+          "user": "1234@123.123",
+          "text": "123"
+        },
+        {
           "id": 20,
           "user": "1234@123.123",
           "text": "5132"
@@ -61,42 +96,6 @@
           "text": "hello"
         }
       ]
-    },
-    {
-      "like": 0,
-      "title": null,
-      "writer": "{\"email\":\"1234@123.123\",\"like\":{}}",
-      "image": "https://source.unsplash.com/random/600x500",
-      "text": "1234\n\n",
-      "reply": [],
-      "id": 4
-    },
-    {
-      "like": 0,
-      "title": null,
-      "writer": "{\"email\":\"1234@123.123\",\"like\":{}}",
-      "image": "https://source.unsplash.com/random/600x500",
-      "text": "12345",
-      "reply": [],
-      "id": 5
-    },
-    {
-      "like": 0,
-      "title": null,
-      "writer": "{\"email\":\"1234@123.123\",\"like\":{}}",
-      "image": "https://source.unsplash.com/random/600x500",
-      "text": "1234",
-      "reply": [],
-      "id": 6
-    },
-    {
-      "like": 0,
-      "title": null,
-      "writer": "{\"email\":\"asdf@asdf.com\",\"like\":{}}",
-      "image": "https://source.unsplash.com/random/600x500",
-      "text": "this is new post",
-      "reply": [],
-      "id": 7
     },
     {
       "like": 0,

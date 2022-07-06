@@ -17,7 +17,7 @@ export default function MainFeed(props) {
     <S.Wrapper load={props.loading} key={id}>
       <S.HeadWrapper>
         <S.UserImg></S.UserImg>
-        <S.Head>{writer}</S.Head>
+        <S.Head>{writer.split('@', 1)}</S.Head>
       </S.HeadWrapper>
       <S.MainImg src={image} onLoad={() => props.setLoading?.(true)} />
       <S.ButtonWrapper>
