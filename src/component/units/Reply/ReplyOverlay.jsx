@@ -49,6 +49,7 @@ export default function Overlay({ data, show, setShow }) {
       window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
     };
   }, []);
+
   return (
     <S.Overlay>
       <div
