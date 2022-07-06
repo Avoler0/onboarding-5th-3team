@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getLoginUser, getNameFromEmail } from '../../commons/utils/lib';
 import * as S from './CreatePostStyles';
 
 export default function CreatePostUI({ text, setText, savePost, close }) {
@@ -23,13 +24,7 @@ export default function CreatePostUI({ text, setText, savePost, close }) {
           <S.BodyRight className="right">
             <S.UserInfo>
               <S.UserImg />
-              <span>
-                {
-                  JSON.parse(localStorage.getItem('LoginUser')).email.split(
-                    '@'
-                  )[0]
-                }
-              </span>
+              <span>{getNameFromEmail(getLoginUser().email)}</span>
             </S.UserInfo>
             <S.TextInput
               placeholder="문구 입력..."

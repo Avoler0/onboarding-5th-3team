@@ -3,7 +3,7 @@ import * as S from './MainStyles';
 import Reply from '../Reply/ReplyContainer';
 import FeedDataService from '../../../services/DataService';
 import ReplyOverlay from '../Reply/ReplyOverlay';
-import { getLoginUser } from '../../commons/utils/lib';
+import { getLoginUser, getNameFromEmail } from '../../commons/utils/lib';
 import { ReactComponent as HeartIco } from '../../../SVG/instagram-heart.svg';
 import { ReactComponent as CommentIco } from '../../../SVG/instagram-comment.svg';
 import { ReactComponent as ShareIco } from '../../../SVG/instagram-share.svg';
@@ -17,7 +17,7 @@ export default function MainFeed(props) {
     <S.Wrapper load={props.loading} key={id}>
       <S.HeadWrapper>
         <S.UserImg></S.UserImg>
-        <S.Head>{writer.split('@', 1)}</S.Head>
+        <S.Head>{getNameFromEmail(writer)}</S.Head>
       </S.HeadWrapper>
       <S.MainImg src={image} onLoad={() => props.setLoading?.(true)} />
       <S.ButtonWrapper>

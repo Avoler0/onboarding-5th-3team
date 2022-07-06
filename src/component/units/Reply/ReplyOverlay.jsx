@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import FeedDataService from '../../../services/DataService';
 import { getLoginUser } from '../../commons/utils/lib';
 import * as S from './ReplyStyles';
+import { getNameFromEmail } from '../../commons/utils/lib';
 
 export default function Overlay({ data, show, setShow }) {
   const { id, image, like, title, writer } = data;
@@ -48,7 +49,6 @@ export default function Overlay({ data, show, setShow }) {
       window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
     };
   }, []);
-  console.log('오버레이 리플라이', reply);
   return (
     <S.Overlay
       onClick={(e) => {
@@ -74,7 +74,9 @@ export default function Overlay({ data, show, setShow }) {
               </div>
             </S.HIco>
             <S.HName>
-              <span>{feed.writer.split('@', 1)}</span>
+              <span>
+                {getNameFromEmail(writer)}
+              </span>
             </S.HName>
           </S.Header>
           <S.Middle id="middle">
@@ -88,7 +90,7 @@ export default function Overlay({ data, show, setShow }) {
                   </S.HIco>
                 </S.User>
                 <S.HName style={{ display: 'inline-flex', marginRight: '5px' }}>
-                  <span>{data.user.split('@', 1)}</span>
+                  <span>{getNameFromEmail(data.user)}</span>
                 </S.HName>
                 <S.ReplyContent>{data.text}</S.ReplyContent>
               </S.Content>
