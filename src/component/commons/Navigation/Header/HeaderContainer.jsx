@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 import HeaderUI from './HeaderPresenter';
 
-export default function Header() {
+export default function Header({ toggleCreatePost }) {
   let navigate = useNavigate();
-  const Logout = () => {
+
+  const logout = () => {
     localStorage.removeItem('LoginUser');
     navigate('/');
   };
 
-  return <HeaderUI Logout={Logout} />;
+  return <HeaderUI logout={logout} toggleCreatePost={toggleCreatePost} />;
 }

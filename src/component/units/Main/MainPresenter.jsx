@@ -3,29 +3,54 @@ import * as S from './MainStyles';
 import Reply from '../Reply/ReplyContainer';
 import FeedDataService from '../../../services/DataService';
 import ReplyOverlay from '../Reply/ReplyOverlay';
-import axios from 'axios';
-import { useEffect } from 'react';
-import Feed from './MainFeed';
-export default function MainPageUI({ board, loading, setLike, setLoading }) {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    if (board.length > 0) setIsLoading(false);
-  }, [board]);
-  if (isLoading) {
-    return <div>로딩중</div>;
-  }
+
+export default function MainPageUI(props) {
+  const [showReplyOverlay, setShowReplyOverlay] = useState(false);
   // console.log('클릭한 게시물', props.board);
   return (
     <>
-      {board.map((data, index) => (
-        <Feed
-          board={data}
-          loading={loading}
-          setLike={setLike}
-          setLoading={setLoading}
-          key={data.id}
-        />
-      ))}
+      {props.board
+        .sort((a, b) => b.id - a.id)
+        .map((el) => (
+          <S.Wrapper load={props.loading} key={el.id}>
+            <S.HeadWrapper>
+              <S.UserImg></S.UserImg>
+              <S.Head>{el.writer}</S.Head>
+            </S.HeadWrapper>
+            <S.MainImg src={el.image} onLoad={() => props.setLoading?.(true)} />
+            <S.ButtonWrapper>
+              <S.LikeImg
+                id={el.id}
+                onClick={async () => {
+                  await FeedDataService.updateFeed({
+                    ...el,
+                    like: el.like + 1,
+                  }).then((res) => {
+                    props.setLike((prev) => !prev);
+                  });
+                }}
+                src="/Header/heart.png"
+              />
+              <S.CommentImg src="/comment.png" />
+              <S.MsgImg src="/Header/send.png" />
+            </S.ButtonWrapper>
+            <div>{el.text ? el.text : null}</div>
+            <S.Like>좋아요 {el.like}</S.Like>
+            <div onClick={() => setShowReplyOverlay((prev) => !prev)}>
+              댓글 모두 보기 : {el.id}
+            </div>
+            <Reply el={el} />
+            <div>
+              {showReplyOverlay && (
+                <ReplyOverlay
+                  data={el}
+                  show={showReplyOverlay}
+                  setShow={setShowReplyOverlay}
+                />
+              )}
+            </div>
+          </S.Wrapper>
+        ))}
     </>
   );
 }

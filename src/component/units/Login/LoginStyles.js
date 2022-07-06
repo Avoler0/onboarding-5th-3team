@@ -85,6 +85,7 @@ export const Mark = styled.div`
   width: 90%;
   border-bottom: 2px solid #eeeeee;
 `;
+
 export const FacebookWrapper = styled.div`
   display: flex;
   cursor: pointer;

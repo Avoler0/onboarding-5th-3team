@@ -25,15 +25,16 @@ const Container = styled.div`
 `;
 
 export default function SubHeaderUI(props) {
-  const onClick = () => {
-    if (icon.onClick) props.Logout;
-  };
   return (
     <Container>
       <S.Wrapper>
         <S.NavIcon isSubHeader>
           {iconArr.map((icon) => (
-            <S.Icon key={icon.path} src={icon.path} onClick={onClick} />
+            <S.Icon
+              key={icon.path}
+              src={icon.path}
+              onClick={icon.onClick && props.Logout}
+            />
           ))}
         </S.NavIcon>
       </S.Wrapper>
