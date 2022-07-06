@@ -60,9 +60,7 @@ export const Loading = styled.div`
 export const Text = styled.div`
   padding: 0 10px;
   width: 100%;
-  height: 30px;
   overflow: hidden;
-  white-space: nowrap;
   word-wrap: break-word;
   text-overflow: ellipsis;
 `;
