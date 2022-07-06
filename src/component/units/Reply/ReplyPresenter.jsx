@@ -1,22 +1,25 @@
 import React from 'react';
 import * as S from './ReplyStyles';
 
-const getNameFromEmail = (email) => email.split('@')[0];
+const getNameFromEmail = (email) => email?.split('@')[0];
 
 export default function ReplyUI(props) {
   return (
     <>
       <S.CommentWrapper>
-        {props.reply?.map((el, index) => (
-          <S.Comment key={index}>
-            <div>
-              <span style={{ fontWeight: 'bold' }}>
-                {getNameFromEmail(el.user)}
-              </span>
-              <span>{el.text}</span>
-            </div>
-          </S.Comment>
-        ))}
+        {props.reply?.map((el, index) => {
+          console.log(el.user);
+          return (
+            <S.Comment key={index}>
+              <div>
+                <span style={{ fontWeight: 'bold' }}>
+                  {getNameFromEmail(el.user)}
+                </span>
+                <span>{el.text}</span>
+              </div>
+            </S.Comment>
+          );
+        })}
       </S.CommentWrapper>
       <form onSubmit={props.onSubmitReply}>
         <S.ReplyWrapper>
