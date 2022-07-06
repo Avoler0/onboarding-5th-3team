@@ -7,7 +7,7 @@ import { getLoginUser } from '../../commons/utils/lib';
 
 export default function MainFeed(props) {
   const { board, loading, setLike, setLoading } = props;
-  const { id, image, like, reply, title, writer } = board;
+  const { id, image, like, reply, title, writer, text } = board;
 
   const [showReplyOverlay, setShowReplyOverlay] = useState(false);
   const hasLike = getLoginUser().like[id];
@@ -61,6 +61,7 @@ export default function MainFeed(props) {
         <S.CommentImg src="/comment.png" />
         <S.MsgImg src="/Header/send.png" />
       </S.ButtonWrapper>
+      <S.Text className="text">{text ? text : null}</S.Text>
       <S.Like>좋아요 {like}</S.Like>
       <div onClick={() => setShowReplyOverlay((prev) => !prev)}>
         댓글 모두 보기 : {id}

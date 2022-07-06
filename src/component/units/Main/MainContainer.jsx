@@ -27,7 +27,7 @@ export default function MainPage({ toggleCreatePost, isCreatePostOpen }) {
     const data = {
       like: 0,
       title: null,
-      writer: localStorage.getItem('LoginUser'),
+      writer: JSON.parse(localStorage.getItem('LoginUser')).email,
       image: imageURL,
       text: text,
       reply: [],
@@ -35,6 +35,7 @@ export default function MainPage({ toggleCreatePost, isCreatePostOpen }) {
     await FeedDataService.postFeed(data).catch((error) => {
       alert(error.message);
     });
+    getPost();
   };
 
   useEffect(() => {
