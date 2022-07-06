@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakPoints } from '../../commons/media';
 
 export const ReplyWrapper = styled.div`
   width: 100%;
@@ -29,24 +30,22 @@ export const CommentWrapper = styled.div`
   margin-bottom: 10px;
 `;
 export const Comment = styled.div`
-  font-size: 10px;
+  display: ${(props) => (props.isDisplay ? 'flex' : 'none')};
+  gap: 10px;
+  font-size: 14px;
 `;
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  background-color: rgb(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100vh;
-  z-index: 10;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
 `;
 export const OverlayReply = styled.div`
-  position: absolute;
   display: flex;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  align-items: center;
   width: 110vh;
   height: 90vh;
   margin: 5vh auto;
@@ -58,6 +57,9 @@ export const FeedImg = styled.div`
   background-color: black;
   width: 60%;
   height: 100%;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const FeedContent = styled.div`
@@ -65,6 +67,9 @@ export const FeedContent = styled.div`
   min-height: 100%;
   border-radius: 0 4px 4px 0;
   border: 1px solid #c7c2c2;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 export const Header = styled.header`
   display: flex;
@@ -169,5 +174,18 @@ export const Form = styled.form`
       color: gray;
       padding: 0;
     }
+  }
+`;
+
+export const Button = styled.button`
+  color: gray;
+  width: fit-content;
+  background-color: white;
+  cursor: pointer;
+  span {
+    font-size: 10px;
+  }
+  :hover {
+    color: black;
   }
 `;

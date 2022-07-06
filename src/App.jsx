@@ -12,9 +12,8 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #efefef;
   height: 100%;
-  overflow-y: scroll; // 없으면 화면 작을 때 흰 배경 나타남
+  overflow-y: scroll;
 `;
 
 function App() {

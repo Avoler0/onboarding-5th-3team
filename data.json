@@ -7,32 +7,14 @@
       "image": "https://source.unsplash.com/random/600x500",
       "reply": [
         {
-          "user": "asdf@asdf.com",
-          "text": "hahahah"
-        },
-        {
-          "user": "asdf@asdf.com",
-          "text": "asdf"
-        },
-        {
-          "user": "asdf@asdf.com",
-          "text": "dsfg"
-        },
-        {
+          "id": 1,
           "user": "asdf@asdf.com",
           "text": "fghj"
         },
         {
+          "id": 2,
           "user": "asdf@asdf.com",
           "text": "fgh"
-        },
-        {
-          "user": "asdf@asdf.com",
-          "text": "vbmn"
-        },
-        {
-          "user": "123@123.123",
-          "text": "435"
         }
       ],
       "id": 1
@@ -45,6 +27,7 @@
       "like": 10,
       "reply": [
         {
+          "id": 1,
           "user": "asdf@asdf.com",
           "text": "dsads"
         }
@@ -58,8 +41,24 @@
       "title": "제목입니다",
       "reply": [
         {
-          "user": "asdf@asdf.com",
-          "text": "하이루"
+          "id": 20,
+          "user": "1234@123.123",
+          "text": "5132"
+        },
+        {
+          "id": 19,
+          "user": "1234@123.123",
+          "text": "1234"
+        },
+        {
+          "id": 18,
+          "user": "test",
+          "text": "월드"
+        },
+        {
+          "id": 9,
+          "user": "test",
+          "text": "hello"
         }
       ]
     },
