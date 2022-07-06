@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-import * as S from './MainStyles';
-import Reply from '../Reply/ReplyContainer';
-import FeedDataService from '../../../services/DataService';
-import ReplyOverlay from '../Reply/ReplyOverlay';
-import { getLoginUser } from '../../commons/utils/lib';
 import Feed from './MainFeed';
 
 export default function MainPageUI(props) {
