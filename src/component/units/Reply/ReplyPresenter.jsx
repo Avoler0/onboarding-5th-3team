@@ -28,19 +28,18 @@ export default function ReplyUI(props) {
           </S.Button>
         )}
       </S.CommentWrapper>
-      <form onSubmit={props.onSubmitReply}>
-        <S.Form>
-          <S.ReplyImg src="/smile.png" />
-          <input
-            ref={props.SubmitRef}
-            type="text"
-            placeholder="댓글을 입력해주세요."
-          />
-          <button>
-            <div>게시</div>
-          </button>
-        </S.Form>
-      </form>
+
+      <S.Form onSubmit={props.onSubmitReply}>
+        <S.ReplyImg src="/smile.png" />
+        <input
+          ref={props.SubmitRef}
+          type="text"
+          placeholder="댓글을 입력해주세요."
+        />
+        <button>
+          <div>게시</div>
+        </button>
+      </S.Form>
     </>
   );
 }
