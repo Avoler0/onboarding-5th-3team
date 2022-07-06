@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakPoints } from '../../commons/media';
 
 export const ReplyWrapper = styled.div`
   width: 100%;
@@ -58,6 +59,9 @@ export const FeedImg = styled.div`
   background-color: black;
   width: 60%;
   height: 100%;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const FeedContent = styled.div`
@@ -65,6 +69,9 @@ export const FeedContent = styled.div`
   min-height: 100%;
   border-radius: 0 4px 4px 0;
   border: 1px solid #c7c2c2;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 export const Header = styled.header`
   display: flex;
