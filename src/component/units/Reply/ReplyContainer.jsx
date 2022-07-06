@@ -8,25 +8,21 @@ export default function ReplyPage(props) {
   const [reply, setReply] = useState(props.el.reply);
   const SubmitRef = useRef(null);
 
+  const splitEmail = (email) => email.split('@')[0];
+
   const onSubmitReply = async (e) => {
     e.preventDefault();
     setReply([...reply, SubmitRef.current?.value]);
-    await postReply({
-      ...props.el,
-      reply: [
-        ...props.el.reply,
-        {
-          user: `${getLoginUser()}`,
-          text: SubmitRef.current?.value,
-        },
-      ],
+    await postReply(props.el, {
+      user: splitEmail(getLoginUser().email),
+      text: SubmitRef.current?.value,
     });
     SubmitRef.current.value = '';
     getReply();
   };
 
-  const postReply = async (data) => {
-    await FeedDataService.updateFeed(data);
+  const postReply = async (prevFeed, newComment) => {
+    await FeedDataService.updateFeed(prevFeed, newComment);
   };
 
   const getReply = () => {

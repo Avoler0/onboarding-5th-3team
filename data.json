@@ -7,32 +7,14 @@
       "image": "https://source.unsplash.com/random/600x500",
       "reply": [
         {
-          "user": "asdf@asdf.com",
-          "text": "hahahah"
-        },
-        {
-          "user": "asdf@asdf.com",
-          "text": "asdf"
-        },
-        {
-          "user": "asdf@asdf.com",
-          "text": "dsfg"
-        },
-        {
+          "id": 1,
           "user": "asdf@asdf.com",
           "text": "fghj"
         },
         {
+          "id": 2,
           "user": "asdf@asdf.com",
           "text": "fgh"
-        },
-        {
-          "user": "asdf@asdf.com",
-          "text": "vbmn"
-        },
-        {
-          "user": "123@123.123",
-          "text": "435"
         }
       ],
       "id": 1
@@ -45,6 +27,7 @@
       "like": 10,
       "reply": [
         {
+          "id": 1,
           "user": "asdf@asdf.com",
           "text": "dsads"
         }
@@ -58,37 +41,16 @@
       "title": "제목입니다",
       "reply": [
         {
+          "id": 2,
+          "user": "test",
+          "text": "bjkdxfnvklcx"
+        },
+        {
+          "id": 1,
           "user": "asdf@asdf.com",
           "text": "하이루"
         }
       ]
-    },
-    {
-      "like": 0,
-      "title": null,
-      "writer": "{\"email\":\"1234@123.123\",\"like\":{}}",
-      "image": "https://source.unsplash.com/random/600x500",
-      "text": "1234\n\n",
-      "reply": [],
-      "id": 4
-    },
-    {
-      "like": 0,
-      "title": null,
-      "writer": "{\"email\":\"1234@123.123\",\"like\":{}}",
-      "image": "https://source.unsplash.com/random/600x500",
-      "text": "12345",
-      "reply": [],
-      "id": 5
-    },
-    {
-      "like": 0,
-      "title": null,
-      "writer": "{\"email\":\"1234@123.123\",\"like\":{}}",
-      "image": "https://source.unsplash.com/random/600x500",
-      "text": "1234",
-      "reply": [],
-      "id": 6
     }
   ]
 }
