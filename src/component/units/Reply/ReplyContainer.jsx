@@ -6,6 +6,7 @@ import ReplyUI from './ReplyPresenter';
 
 export default function ReplyPage(props) {
   const [reply, setReply] = useState(props.el.reply);
+  const [feed, setFeed] = useState(props.el);
   const SubmitRef = useRef(null);
 
   const splitEmail = (email) => email.split('@')[0];
@@ -13,7 +14,7 @@ export default function ReplyPage(props) {
   const onSubmitReply = async (e) => {
     e.preventDefault();
     setReply([...reply, SubmitRef.current?.value]);
-    await postReply(props.el, {
+    await postReply(feed, {
       user: splitEmail(getLoginUser().email),
       text: SubmitRef.current?.value,
     });
@@ -22,11 +23,12 @@ export default function ReplyPage(props) {
   };
 
   const postReply = async (prevFeed, newComment) => {
-    await FeedDataService.updateFeed(prevFeed, newComment);
+    const { data } = await FeedDataService.updateFeed(prevFeed, newComment);
+    setFeed(data);
   };
 
   const getReply = () => {
-    FeedDataService.getFeed(props.el.id)
+    FeedDataService.getFeed(feed.id)
       .then((res) => {
         setReply(res.data.reply);
       })
