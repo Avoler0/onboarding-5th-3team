@@ -146,9 +146,9 @@ export default function Overlay({ data, show, setShow, setLike }) {
                 </S.Submit>
               </S.ReplyWrapper>
             </S.Form>
-          </S.Writing>
-        </S.FeedContent>
-      </S.OverlayReply>
+          </S.FeedContent>
+        </S.OverlayReply>
+      </div>
     </S.Overlay>
   );
 }
