@@ -37,6 +37,7 @@ export const InputWrapper = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 `;
 export const Input = styled.input`

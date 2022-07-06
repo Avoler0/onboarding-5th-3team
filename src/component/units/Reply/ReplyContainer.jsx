@@ -6,31 +6,27 @@ import ReplyUI from './ReplyPresenter';
 
 export default function ReplyPage(props) {
   const [reply, setReply] = useState(props.el.reply);
+  const [feed, setFeed] = useState(props.el);
   const SubmitRef = useRef(null);
 
   const onSubmitReply = async (e) => { // 댓글 추가
     e.preventDefault();
     setReply([...reply, SubmitRef.current?.value]);
-    await postReply({
-      ...props.el,
-      reply: [
-        ...props.el.reply,
-        {
-          user: `${getLoginUser()}`,
-          text: SubmitRef.current?.value,
-        },
-      ],
+    await postReply(feed, {
+      user: getLoginUser().email,
+      text: SubmitRef.current?.value,
     });
     SubmitRef.current.value = '';
     getReply();
   };
 
-  const postReply = async (data) => {
-    await FeedDataService.updateFeed(data);
+  const postReply = async (prevFeed, newComment) => {
+    const { data } = await FeedDataService.updateFeed(prevFeed, newComment);
+    setFeed(data);
   };
 
   const getReply = () => {
-    FeedDataService.getFeed(props.el.id)
+    FeedDataService.getFeed(feed.id)
       .then((res) => {
         setReply(res.data.reply);
       })
