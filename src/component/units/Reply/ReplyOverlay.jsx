@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import * as S from './ReplyStyles';
+import { getNameFromEmail } from '../../commons/utils/lib';
 
 export default function Overlay({ data, show, setShow }) {
   const { id, image, like, title, writer } = data;
@@ -28,9 +29,7 @@ export default function Overlay({ data, show, setShow }) {
       window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
     };
   }, []);
-  reply.map((data) => {
-    console.log(data.user.split('@', 1));
-  });
+
   return (
     <S.Overlay
       onClick={() => {
@@ -53,7 +52,7 @@ export default function Overlay({ data, show, setShow }) {
             </S.HIco>
             <S.HName>
               <span>
-                {writer}
+                {getNameFromEmail(writer)}
                 {id}
               </span>
             </S.HName>
@@ -82,7 +81,7 @@ export default function Overlay({ data, show, setShow }) {
                   </S.HIco>
                 </S.User>
                 <S.HName style={{ display: 'inline-flex', marginRight: '5px' }}>
-                  <span>{data.user.split('@', 1)}</span>
+                  <span>{getNameFromEmail(data.user)}</span>
                 </S.HName>
                 <S.ReplyContent>{data.text}</S.ReplyContent>
               </S.Content>
