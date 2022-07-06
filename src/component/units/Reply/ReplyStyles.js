@@ -102,10 +102,16 @@ export const HName = styled.div`
 export const Middle = styled.div`
   padding: 10px 5px;
   display: flex;
+  flex-direction: column;
   height: 75%;
 `;
 export const User = styled.div``;
-export const Content = styled.div``;
+export const Content = styled.div`
+  display: flex;
+  margin: 3px 0;
+  line-height: 20px;
+  text-align: center;
+`;
 export const ReplyContent = styled.div`
   display: inline;
   font-size: 12px;

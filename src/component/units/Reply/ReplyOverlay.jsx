@@ -5,18 +5,19 @@ import * as S from './ReplyStyles';
 
 export default function Overlay({ data, show, setShow }) {
   console.log(data);
-  const { id, image, like, title, writer } = data;
-  const [reply, setReply] = useState([]);
+  const { id, image, like, title, writer, reply } = data;
+  console.log(data);
   console.log('아이디', id, '리플', reply);
+
   useEffect(() => {
-    axios
-      .get(`http://localhost:4000/posts/${id}`)
-      .then((res) => {
-        setReply(res.data.reply);
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
+    // axios
+    //   .get(`http://localhost:4000/posts/${id}`)
+    //   .then((res) => {
+    //     setReply(res.data.reply);
+    //   })
+    //   .catch((error) => {
+    //     alert(error.message);
+    //   });
     // 스크롤 방지
     document.body.style.cssText = `
     position: fixed; 
@@ -29,6 +30,9 @@ export default function Overlay({ data, show, setShow }) {
       window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
     };
   }, []);
+  reply.map((data) => {
+    console.log(data.user.split('@', 1));
+  });
   return (
     <>
       <S.Overlay
@@ -59,19 +63,34 @@ export default function Overlay({ data, show, setShow }) {
             </S.HName>
           </S.Header>
           <S.Middle>
-            <S.User>
-              <S.HIco>
-                <div>
-                  <S.IcoCircle />
-                </div>
-              </S.HIco>
-            </S.User>
-            <S.Content>
+            <S.Content style={{ display: 'flex' }}>
+              <S.User>
+                <S.HIco id="icon">
+                  <div>
+                    <S.IcoCircle />
+                  </div>
+                </S.HIco>
+              </S.User>
               <S.HName style={{ display: 'inline-flex', marginRight: '5px' }}>
                 <span>{writer}</span>
               </S.HName>
               <S.ReplyContent>글 내용</S.ReplyContent>
             </S.Content>
+            {reply.map((data, index) => (
+              <S.Content key={index}>
+                <S.User>
+                  <S.HIco id="icon">
+                    <div>
+                      <S.IcoCircle />
+                    </div>
+                  </S.HIco>
+                </S.User>
+                <S.HName style={{ display: 'inline-flex', marginRight: '5px' }}>
+                  <span>{data.user.split('@', 1)}</span>
+                </S.HName>
+                <S.ReplyContent>{data.text}</S.ReplyContent>
+              </S.Content>
+            ))}
           </S.Middle>
           <S.Menu>
             <S.MSection>

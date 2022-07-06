@@ -1,17 +1,14 @@
 {
   "posts": [
     {
-      "like": 30,
+      "like": 29,
       "title": "제목입니다",
       "writer": "영희",
       "image": "https://source.unsplash.com/random/600x500",
       "reply": [
         {
           "user": "asdf@asdf.com",
-          "text": [
-            "hahahah",
-            "qwer"
-          ]
+          "text": "hahahah"
         },
         {
           "user": "asdf@asdf.com",
@@ -59,7 +56,6 @@
     },
     {
       "id": 3,
-
       "title": "제목입니다",
       "writer": "영희",
       "image": "https://source.unsplash.com/random/700x1080",
