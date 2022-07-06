@@ -15,15 +15,17 @@ export default function ReplyUI(props) {
         ))}
       </S.CommentWrapper>
       <form onSubmit={props.onSubmitReply}>
-        <S.ReplyWrapper>
+        <S.Form>
           <S.ReplyImg src="/smile.png" />
-          <S.ReplyInput
+          <input
             ref={props.SubmitRef}
             type="text"
             placeholder="댓글을 입력해주세요."
           />
-          <S.Submit>게시</S.Submit>
-        </S.ReplyWrapper>
+          <button>
+            <div>게시</div>
+          </button>
+        </S.Form>
       </form>
     </>
   );

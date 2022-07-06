@@ -29,7 +29,7 @@ export const CommentWrapper = styled.div`
   margin-bottom: 10px;
 `;
 export const Comment = styled.div`
-  font-size: 10px;
+  font-size: 14px;
 `;
 export const Overlay = styled.div`
   position: fixed;

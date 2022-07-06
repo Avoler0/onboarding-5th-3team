@@ -60,6 +60,10 @@
         {
           "user": "asdf@asdf.com",
           "text": "하이루"
+        },
+        {
+          "user": "[object Object]",
+          "text": "523"
         }
       ]
     },
@@ -78,7 +82,12 @@
       "writer": "{\"email\":\"1234@123.123\",\"like\":{}}",
       "image": "https://source.unsplash.com/random/600x500",
       "text": "12345",
-      "reply": [],
+      "reply": [
+        {
+          "user": "[object Object]",
+          "text": "12354"
+        }
+      ],
       "id": 5
     },
     {
@@ -87,7 +96,12 @@
       "writer": "{\"email\":\"1234@123.123\",\"like\":{}}",
       "image": "https://source.unsplash.com/random/600x500",
       "text": "1234",
-      "reply": [],
+      "reply": [
+        {
+          "user": "[object Object]",
+          "text": "a"
+        }
+      ],
       "id": 6
     }
   ]
