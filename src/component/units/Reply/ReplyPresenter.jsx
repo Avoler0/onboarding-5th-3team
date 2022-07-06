@@ -1,25 +1,30 @@
 import React from 'react';
+import { useState } from 'react';
 import * as S from './ReplyStyles';
 
 const getNameFromEmail = (email) => email?.split('@')[0];
 
 export default function ReplyUI(props) {
+  const [showAll, setShowAll] = useState(false);
+
   return (
     <>
       <S.CommentWrapper>
         {props.reply?.map((el, index) => {
-          console.log(el.user);
           return (
-            <S.Comment key={index}>
-              <div>
-                <span style={{ fontWeight: 'bold' }}>
-                  {getNameFromEmail(el.user)}
-                </span>
-                <span>{el.text}</span>
-              </div>
+            <S.Comment key={index} isDisplay={index < 3 || showAll}>
+              <span style={{ fontWeight: 'bold' }}>
+                {getNameFromEmail(el.user)}
+              </span>
+              <span>{el.text}</span>
             </S.Comment>
           );
         })}
+        {!showAll && (
+          <S.Button onClick={() => setShowAll((prev) => !prev)}>
+            ... <span>+{props.reply.length - 3}</span>
+          </S.Button>
+        )}
       </S.CommentWrapper>
       <form onSubmit={props.onSubmitReply}>
         <S.ReplyWrapper>
