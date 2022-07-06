@@ -146,7 +146,6 @@ export const Icon = styled.div`
     color: gray;
   }
 `;
-
 export const Form = styled.form`
   display: flex;
   align-items: center;

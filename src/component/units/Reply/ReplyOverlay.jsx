@@ -4,12 +4,17 @@ import FeedDataService from '../../../services/DataService';
 import { getLoginUser } from '../../commons/utils/lib';
 import * as S from './ReplyStyles';
 import { getNameFromEmail } from '../../commons/utils/lib';
+import { ReactComponent as HeartIco } from '../../../SVG/instagram-heart.svg';
+import { ReactComponent as HeartIcoFill } from '../../../SVG/instagram-heart2.svg';
+import { ReactComponent as CommentIco } from '../../../SVG/instagram-comment.svg';
+import { ReactComponent as ShareIco } from '../../../SVG/instagram-share.svg';
 
-export default function Overlay({ data, show, setShow }) {
+export default function Overlay({ data, show, setShow, setLike }) {
   const { id, image, like, title, writer } = data;
   const [reply, setReply] = useState([]);
   const [feed, setFeed] = useState(data);
   const SubmitRef = useRef(null);
+  const hasLike = getLoginUser().like[id];
   function getReply() {
     FeedDataService.getFeed(id)
       .then((res) => {
@@ -19,12 +24,12 @@ export default function Overlay({ data, show, setShow }) {
         alert(error.message);
       });
   }
-
+  console.log('피드', feed);
   const onSubmitReply = async (e) => {
     // 댓글 추가
     e.preventDefault();
     setReply([...reply, SubmitRef.current?.value]);
-    await postReply(data, {
+    await postReply(feed, {
       user: getLoginUser().email,
       text: SubmitRef.current?.value,
     });
