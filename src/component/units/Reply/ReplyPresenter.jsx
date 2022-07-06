@@ -1,6 +1,8 @@
 import React from 'react';
 import * as S from './ReplyStyles';
 
+const getNameFromEmail = (email) => email.split('@')[0];
+
 export default function ReplyUI(props) {
   return (
     <>
@@ -8,7 +10,9 @@ export default function ReplyUI(props) {
         {props.reply?.map((el, index) => (
           <S.Comment key={index}>
             <div>
-              <span style={{ fontWeight: 'bold' }}>{el.user} </span>
+              <span style={{ fontWeight: 'bold' }}>
+                {getNameFromEmail(el.user)}
+              </span>
               <span>{el.text}</span>
             </div>
           </S.Comment>

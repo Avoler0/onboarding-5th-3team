@@ -9,13 +9,11 @@ export default function ReplyPage(props) {
   const [feed, setFeed] = useState(props.el);
   const SubmitRef = useRef(null);
 
-  const splitEmail = (email) => email.split('@')[0];
-
   const onSubmitReply = async (e) => {
     e.preventDefault();
     setReply([...reply, SubmitRef.current?.value]);
     await postReply(feed, {
-      user: splitEmail(getLoginUser().email),
+      user: getLoginUser().email,
       text: SubmitRef.current?.value,
     });
     SubmitRef.current.value = '';
