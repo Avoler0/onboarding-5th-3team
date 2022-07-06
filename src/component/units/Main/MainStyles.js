@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakPoints } from '../../commons/media';
 
 export const Wrapper = styled.div`
   max-width: 470px;
@@ -65,6 +66,10 @@ export const Text = styled.div`
   text-overflow: ellipsis;
 `;
 export const ReplyShow = styled.div`
+  display: block;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
   margin: 0px 10px 10px 10px;
   font-size: 14px;
   color: #998f8f;
