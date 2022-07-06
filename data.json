@@ -41,14 +41,15 @@
       "title": "제목입니다",
       "reply": [
         {
-          "id": 2,
+          "id": 18,
           "user": "test",
-          "text": "bjkdxfnvklcx"
+          "text": "월드"
         },
+
         {
-          "id": 1,
-          "user": "asdf@asdf.com",
-          "text": "하이루"
+          "id": 9,
+          "user": "test",
+          "text": "hello"
         }
       ]
     }
