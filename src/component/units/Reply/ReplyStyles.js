@@ -40,12 +40,12 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 99;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.6);
 `;
 export const OverlayReply = styled.div`
   display: flex;
-  align-items: center;
+  position: relative;
   width: 110vh;
   height: 90vh;
   margin: 5vh auto;
@@ -54,16 +54,20 @@ export const OverlayReply = styled.div`
   z-index: 11;
 `;
 export const FeedImg = styled.div`
+  display: flex;
+  align-items: center;
   background-color: black;
-  width: 60%;
   height: 100%;
+  @media (min-height: 768px) and (max-width: 1023px) {
+    display: none;
+  }
   @media ${breakPoints.mobile} {
     display: none;
   }
 `;
 
 export const FeedContent = styled.div`
-  min-width: 40%;
+  width: 500px;
   min-height: 100%;
   border-radius: 0 4px 4px 0;
   border: 1px solid #c7c2c2;
@@ -105,6 +109,7 @@ export const HName = styled.div`
   }
 `;
 export const Middle = styled.div`
+  display: block;
   padding: 10px 5px;
   display: flex;
   flex-direction: column;
@@ -152,7 +157,6 @@ export const Writing = styled.div`
 export const Form = styled.form`
   display: flex;
   align-items: center;
-
   height: 40px;
 
   img {
@@ -182,6 +186,8 @@ export const Button = styled.button`
   width: fit-content;
   background-color: white;
   cursor: pointer;
+  margin: 2px 0;
+  padding: 0;
   span {
     font-size: 10px;
   }
