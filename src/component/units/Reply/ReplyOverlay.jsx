@@ -50,95 +50,66 @@ export default function Overlay({ data, show, setShow }) {
     };
   }, []);
   return (
-    <S.Overlay
-      onClick={(e) => {
-        if (e.target == e.currentTarget) setShow(false);
-      }}
-    >
-      <S.OverlayReply>
-        <S.FeedImg>
-          <img
-            src={image}
-            style={{
-              display: 'block',
-              maxWidth: '100%',
-              maxHeight: '100%',
-            }}
-          />
-        </S.FeedImg>
-        <S.FeedContent>
-          <S.Header>
-            <S.HIco>
-              <div>
-                <S.IcoCircle />
-              </div>
-            </S.HIco>
-            <S.HName>
-              <span>
-                {getNameFromEmail(writer)}
-              </span>
-            </S.HName>
-          </S.Header>
-          <S.Middle id="middle">
-            {feed.reply.map((data) => (
-              <S.Content key={data.id}>
-                <S.User>
-                  <S.HIco id="icon">
-                    <div>
-                      <S.IcoCircle />
-                    </div>
-                  </S.HIco>
-                </S.User>
-                <S.HName style={{ display: 'inline-flex', marginRight: '5px' }}>
-                  <span>{getNameFromEmail(data.user)}</span>
-                </S.HName>
-                <S.ReplyContent>{data.text}</S.ReplyContent>
-              </S.Content>
-            ))}
-          </S.Middle>
-          <S.Menu>
-            <S.MSection>
-              <S.MIcon style={{ marginLeft: '-8px' }}>
+    <S.Overlay>
+      <div
+        style={{
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+        onClick={(e) => {
+          if (e.target == e.currentTarget) setShow(false);
+        }}
+      >
+        <S.OverlayReply>
+          <S.FeedImg src={image}></S.FeedImg>
+          <S.FeedContent>
+            <S.Header>
+              <S.IcoCircle />
+              <span>{getNameFromEmail(writer)}</span>
+            </S.Header>
+            <S.Contents id="middle">
+              {feed.reply.map((data) => (
+                <S.Content key={data.id}>
+                  <div>
+                    <S.HIco id="icon">
+                      <S.IcoCircle small />
+                    </S.HIco>
+                  </div>
+                  <S.HName
+                    style={{ display: 'inline-flex', marginRight: '5px' }}
+                  >
+                    <span>{getNameFromEmail(data.user)}</span>
+                  </S.HName>
+                  <S.ReplyContent>{data.text}</S.ReplyContent>
+                </S.Content>
+              ))}
+            </S.Contents>
+            <S.Menu>
+              <S.Icon>
                 <img src="Header/heart.png" />
-              </S.MIcon>
-              <S.MIcon>
+                <span> {feed.like}개</span>
+              </S.Icon>
+              <S.Icon>
                 <img src="comment.png" />
-              </S.MIcon>
-              <S.MIcon>
+              </S.Icon>
+              <S.Icon>
                 <img src="Header/send.png" />
-              </S.MIcon>
-              <S.MIcon></S.MIcon>
-            </S.MSection>
-            <S.MSection style={{ padding: '0 16px 0 16px', border: '0' }}>
-              좋아요 100개
-            </S.MSection>
-            <div
-              style={{
-                padding: '15px 16px 0 16px',
-                fontSize: '9px',
-                color: 'gray',
-              }}
-            >
-              2일 전
-            </div>
-          </S.Menu>
-          <S.Writing id="writing">
-            <S.Form onSubmit={onSubmitReply}>
-              <S.ReplyWrapper>
-                <S.ReplyImg src="/smile.png" />
-                <S.ReplyInput
-                  ref={SubmitRef}
-                  type="text"
-                  placeholder="댓글을 입력해주세요."
-                />
-                <S.Submit>
-                  <div>게시</div>
-                </S.Submit>
-              </S.ReplyWrapper>
+              </S.Icon>
+            </S.Menu>
+            <S.Form id="writing" onSubmit={onSubmitReply}>
+              <S.ReplyImg src="/smile.png" />
+              <S.ReplyInput
+                ref={SubmitRef}
+                type="text"
+                placeholder="댓글을 입력해주세요."
+              />
+              <S.Submit>게시</S.Submit>
             </S.Form>
-          </S.Writing>
-        </S.FeedContent>
-      </S.OverlayReply>
+          </S.FeedContent>
+        </S.OverlayReply>
+      </div>
     </S.Overlay>
   );
 }
