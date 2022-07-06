@@ -146,12 +146,6 @@ export const Icon = styled.div`
     color: gray;
   }
 `;
-export const Writing = styled.div`
-  padding: 6px 16px;
-  padding: 6px 16px;
-  border-top: 1px solid #c7c2c2;
-  z-index: 11;
-`;
 export const Form = styled.form`
   display: flex;
   align-items: center;
