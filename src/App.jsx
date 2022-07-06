@@ -6,13 +6,16 @@ import Layout from './component/commons/Navigation';
 import Main from './pages/MainPage';
 
 const Wrapper = styled.div`
-  padding: 40px 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: #efefef;
-  height: 100%;
-  overflow-y: scroll; // 없으면 화면 작을 때 흰 배경 나타남
+  padding: 5%;
+`;
+
+const MainWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
 `;
 
 function App() {
@@ -21,9 +24,11 @@ function App() {
       <Route
         path="/main"
         element={
-          <Layout>
-            <Main />
-          </Layout>
+          <>
+            <Layout>
+              <Main />
+            </Layout>
+          </>
         }
       />
       <Route
