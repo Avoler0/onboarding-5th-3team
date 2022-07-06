@@ -17,7 +17,6 @@ export const LoginWrapper = styled.div`
 `;
 export const Form = styled.form`
   display: flex;
-  width: 100%;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -33,13 +32,12 @@ export const MainImg = styled.img`
   margin: 40px 0px 40px 0px;
 `;
 
-export const InputWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: 10px;
+export const Label = styled.div`
+  margin-bottom: 5%;
+  font-size: 20px;
 `;
-export const Input = styled.input`
+
+export const EmailInput = styled.input`
   border-radius: 5px;
   border: ${(props) =>
     props.emailValid ? '1px solid #eeeeee' : '1px solid #f77167'};
@@ -64,7 +62,7 @@ export const PasswordInput = styled.input`
 export const Button = styled.button`
   width: 80%;
   height: 40px;
-
+  margin-bottom: 40px;
   background-color: ${(props) =>
     props.passwordValid && props.emailValid ? '#2c88dd' : '#9fc5e8'};
   border-radius: 5px;
@@ -85,8 +83,10 @@ export const Mark = styled.div`
   width: 90%;
   border-bottom: 2px solid #eeeeee;
 `;
+
 export const FacebookWrapper = styled.div`
   display: flex;
+  margin-bottom: 30px;
   cursor: pointer;
   :hover {
     text-decoration: underline;
@@ -107,7 +107,9 @@ export const FacebookFont = styled.div`
 `;
 
 export const FindPassword = styled.div`
+  margin-bottom: 30px;
   color: #3d85c6;
+  font-weight: bold;
   font-size: 12px;
   cursor: pointer;
   :hover {
@@ -123,8 +125,6 @@ export const SignUpWrapper = styled.div`
   padding: 30px;
   margin-bottom: 30px;
   background-color: white;
-  border: 1px solid lightgray;
-  width: 100%;
 `;
 
 export const SignUpFont = styled.div`
@@ -145,15 +145,12 @@ export const SignUpButton = styled.div`
 
 export const AppDownFont = styled.div`
   font-size: 17px;
-  margin-bottom: 16px;
+  margin-bottom: 30px;
 `;
 
 export const AppDownWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 0 30px;
-  width: 100%;
-  gap: 10px;
 `;
 
 export const AppStore = styled.img`
